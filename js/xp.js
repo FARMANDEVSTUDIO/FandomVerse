@@ -111,19 +111,34 @@ window.FV = window.FV || {};
     setTimeout(() => FV.addXP(pts, kind), 1200);
   }
   // profile page: level, XP bar, stats and badges
+  // how far each badge is (current, goal)
+  const PROGRESS = {
+    first: s => [Math.min(s.xp, 1), 1], explorer: s => [s.cats.length, 7], collect: s => [s.chars.length, 10],
+    lore: s => [s.articles.length, 10], soul: s => [s.best || 0, 80], battle: s => [s.counts.battleWin || 0, 10],
+    cup: s => [s.counts.cup || 0, 1], daily: s => [s.counts.daily || 0, 3], lucky: s => [s.counts.surprise || 0, 5], super: s => [s.xp, 1000]
+  };
+  const TITLES_NEXT = ["Newcomer", "Fan", "Explorer", "Enthusiast", "Lore Keeper", "Superfan", "Legend", "Multiverse Master"];
   function drawCard(){
     if(!document.getElementById("xpCard")) return;
     const s = FV.xpState(), L = FV.xpLevel(s.xp);
     const set = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
     set("xpLvl", L.lvl); set("xpTitle", L.title); set("xpNow", L.into.toLocaleString()); set("xpGoal", L.need.toLocaleString());
-    set("xpNext", `${(L.need - L.into).toLocaleString()} XP to level ${L.lvl + 1} · ${s.xp.toLocaleString()} XP in total`);
+    set("xpNext", `Next: ${TITLES_NEXT[Math.min(L.lvl, TITLES_NEXT.length - 1)]}`);
     document.getElementById("xpFill").style.width = Math.round(L.into / L.need * 100) + "%";
-    const stats = [["Characters seen", s.chars.length], ["Articles read", s.articles.length], ["Battles won", s.counts.battleWin || 0], ["Best match", (s.best || 0) + "%"]];
-    document.getElementById("xpStats").innerHTML = stats.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+    // the last character this fan opened, faded in on the right
+    const lvl = document.getElementById("xpLevel"), last = s.chars[s.chars.length - 1];
+    if(lvl && last) lvl.style.setProperty("--xp-art", `url("${new URL(`assets/images/characters/${last}.jpg`, location.href).href}")`);
+    const stats = [["layers", "Characters seen", s.chars.length], ["book", "Articles read", s.articles.length], ["swords", "Battles won", s.counts.battleWin || 0], ["heart", "Best match", (s.best || 0) + "%"]];
+    document.getElementById("xpStats").innerHTML = stats.map(([ic, k, v]) => `<div>${FV.gi(ic, 18)}<dt>${k}</dt><dd>${v}</dd></div>`).join("");
     set("xpBadgeCount", `${s.badges.length} of ${FV.BADGES.length} unlocked`);
     document.getElementById("xpBadges").innerHTML = FV.BADGES.map(b => {
       const on = s.badges.includes(b.id);
-      return `<li class="xp-badge ${on ? "on" : ""}">${FV.gi(on ? b.icon : "lock", 16)}<span><strong>${b.name}</strong><small>${b.desc}</small></span></li>`;
+      const [cur, goal] = (PROGRESS[b.id] || (() => [0, 1]))(s), pct = Math.min(100, Math.round(cur / goal * 100));
+      return `<li class="xp-badge ${on ? "on" : ""}">
+        <span class="xp-badge-ico">${FV.gi(on ? b.icon : "lock", 18)}</span>
+        <strong>${b.name}</strong><small>${b.desc}</small>
+        <span class="xp-badge-bar"><i style="width:${on ? 100 : pct}%"></i></span>
+        <em>${on ? "Unlocked" : `${Math.min(cur, goal).toLocaleString()} / ${goal.toLocaleString()}`}</em></li>`;
     }).join("");
   }
   // release reminders set on the Events page: tell the fan the day before and on the day (once per day)

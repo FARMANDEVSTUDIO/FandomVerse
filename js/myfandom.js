@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // ---- profile: toggle chips
   function drawPicker(el){
     const fav = getFav();
-    el.innerHTML = cats.map(c => `<button type="button" class="fav-chip ${fav.includes(c.id) ? "on" : ""}" data-cat="${c.id}" aria-pressed="${fav.includes(c.id)}" style="--c:${c.color}">${esc(c.name)}</button>`).join("");
+    el.innerHTML = cats.map(c => `<button type="button" class="fav-chip ${fav.includes(c.id) ? "on" : ""}" data-cat="${c.id}" aria-pressed="${fav.includes(c.id)}" style="--c:${c.color}"><i class="fav-dot"></i>${esc(c.name)}</button>`).join("");
   }
   function wire(el, after){
     drawPicker(el);
