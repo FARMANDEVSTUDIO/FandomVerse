@@ -66,7 +66,7 @@ FV.renderEventRow = function renderEventRow(e, catMap){
   return `
     <div class="event-row">
       <div class="glow-card event-card" style="--cat:${c.color};--cat-2:${c.color2}">
-        ${e.art ? `<div class="event-thumb">${FV.slotImg("articles", e.art, e.title)}</div>` : ""}
+        ${e.img ? `<div class="event-thumb"><img class="slot-img" src="${(window.FV_BASE || "") + e.img}" alt="" loading="lazy"></div>` : e.art ? `<div class="event-thumb">${FV.slotImg("articles", e.art, e.title)}</div>` : ""}
         <div class="event-datebox" aria-hidden="true">
           <strong>${d.getDate()}</strong><span>${d.toLocaleDateString([], {month:"short"})}</span>
         </div>
