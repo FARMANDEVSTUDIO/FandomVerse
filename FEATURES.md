@@ -33,7 +33,7 @@ The front page of the universe.
 |---|---|
 | **Hero** | "One universe. Every fandom." with a planet horizon and live counters (categories, characters). The counters count up once the page has loaded. |
 | **Banner** | A rotating banner of highlights from different fandoms. |
-| **My Fandom** (logged-in only) | "Welcome back" with your level, a row to pick your favourite fandoms, and a personal feed: a character for you, new articles, the next event, a trailer, a merch item and the daily challenge. The feed only uses the fandoms you picked. |
+| **My Fandom** (logged-in only) | "Welcome back" with your level, a row to pick your favourite fandoms, and a personal feed of seven picture cards: a character for you (large card), two new articles (their posters), the next upcoming event (its picture), a trailer (YouTube thumbnail with a play button), a merch item (product photo) and the daily challenge (a blurred mystery picture with a "?"). The feed only uses the fandoms you picked. |
 | **Scroll gallery** | Fandom cards that move into place as you scroll down; hover a card to flip it. |
 | **Categories** | The seven fandoms: Anime, Gaming, Movies, TV Shows, K-Pop, Comics and Manga. Each opens its own hub. |
 | **Poster wall** | A tilted wall of posters that slides across the screen. Clicking a poster opens its category. |
@@ -54,12 +54,17 @@ The profile of one character.
 - Opening a character gives **+5 XP** the first time.
 
 ### Category hub (`category.html?cat=...`)
-One page for each of the seven fandoms: its characters, articles, trailers, events and posters together. Visiting a category gives **+5 XP** the first time.
+One page for each of the seven fandoms (Anime, Gaming, Movies, TV Shows, K-Pop, Comics, Manga).
+- **Banner:** a wide strip of four official scenes from that fandom (for example four PUBG battle scenes on Gaming, RM, Jimin and V of BTS on K-Pop, Luffy and Sanji on Manga), with the fandom's icon, name, tagline and counts of articles, characters and events.
+- **Tabs:** Articles (with a sort menu), Gallery (eight official pictures of that fandom: trailer stills, posters and character art; click one to open it large), Characters, Events, Media, Merchandise and Posters.
+- Visiting a category gives **+5 XP** the first time.
 
 ### Events (`events.html`)
-- **Events list:** watch parties, meetups and releases, with category filters.
-- **Release calendar:** a month grid with coloured dots on release days. Click a day to see what comes out.
+- **Events list:** real fandom events, filtered by fandom: New York Comic Con 2026 (8–11 Oct, Javits Center), Grand Theft Auto VI launch day (19 Nov 2026), Avengers: Doomsday premiere week (18 Dec 2026), Jump Festa 2027 (19–20 Dec 2026, Makuhari Messe, Japan), Gamescom 2026 (26–30 Aug, Cologne), Spider-Man: Brand New Day opening weekend (31 Jul 2026), San Diego Comic-Con 2026 (23–26 Jul), Anime Expo 2026 (2–5 Jul, Los Angeles), the BTS ARIRANG world tour opening (9 Apr 2026, Goyang) and the Stranger Things finale in cinemas (31 Dec 2025). Each card has its own picture and a badge: green "Upcoming · in N days", red "Today" or grey "Past event". Upcoming events are listed first, then past ones (newest first).
+- **Release calendar:** officially announced release dates (films, seasons, games and albums), for example GTA VI on 19 Nov 2026, Avengers: Doomsday on 18 Dec 2026 and The Batman Part II on 1 Oct 2027. The header shows the month and how many releases it has, with a **Today** button and previous/next arrows. Fandom chips filter the calendar; choosing a fandom jumps to the month of its next release. Each release day shows an icon for its type (film strip, book, TV, controller, music note, box) in the fandom's colour; today has a red circle and past days are faded. Clicking a day lists its releases on the right.
+- **Next up list:** each release shows the weekday and date, its type with an icon, where it comes out, and a countdown ("In 5 days"; red when it is within a week).
 - **Remind me:** a bell button on every upcoming release. The reminder is saved in the browser, and a note pops up on any page the day before and on the day of the release.
+- Dates use the visitor's local calendar, so "today" changes at local midnight. Studios sometimes move dates.
 
 ### Media (`trailers.html`)
 Official trailers and interviews, filtered by fandom and type. A video plays from a local clip when one is available, and otherwise from YouTube. Each video has a **Watchlist** button (the saved list appears on the profile).
@@ -150,3 +155,22 @@ The AI keys are the only secret. They live on the server (`.server/ai-key.txt` l
 | **GitHub Pages** | The website is at https://farmandevstudio.github.io/FandomVerse/. Its AI chat asks the Vercel server, so the keys stay safe there. |
 
 **Built with:** HTML5, CSS3, JavaScript (ES6), JSON data files, model-viewer for 3D, the Web Speech API (voice input and speech), the Web Audio API, and a small Python server for the AI.
+
+---
+
+## 5. Small details
+
+- **Logo:** a white "F" with a red orbit ring and a small four-point star, on the header, footer, loading screen and browser tab. In light mode the white parts turn dark.
+- **Site colour:** red (#e8382f). Users can pick another accent colour on their profile; "Reset" brings back red.
+- **Daily Challenge:** a new character every day at local midnight, chosen from the date, so everyone sees the same one. Wrong guesses reveal the next clue and sharpen the picture; after three wrong guesses the answer is shown. The streak grows when you solve it on consecutive days and resets if you miss a day.
+- **XP levels:** level 2 needs 100 XP; each next level needs about 35% more than the last. Levels: Newcomer, Fan, Explorer, Enthusiast, Lore Keeper, Superfan, Legend, Multiverse Master.
+- **XP amounts:** open a character +5, visit a category +5, read an article +10, Personality Match +10, battle +5 (a right call +15), right tournament prediction +25, daily challenge +20, Surprise Me +2 (first five times).
+- **Badges:** First Steps (first XP), Fandom Explorer (all 7 categories), Character Collector (10 character profiles), Lore Master (10 articles), Soul Match (80% or more in Personality Match), Battle Champion (10 right battle calls), Tournament Winner (predict a champion), Daily Hero (3 daily challenges), Feeling Lucky (Surprise Me 5 times), Superfan (1,000 XP).
+- **Battle stats:** every fighter has Power, Speed, Smarts, Defense and Skill out of 100. The winner takes most of the five rounds; on a tie the higher total wins. BTS members are not in battles because they are real people.
+- **Personality Match traits:** Bravery, Kindness, Humour, Strategy, Calmness, Confidence, Loyalty, Energy, each 0–10 per character.
+- **Characters:** 33 characters across the seven fandoms; 9 have 3D models and recorded voices (Yuji Itadori, Satoru Gojo, Megumi Fushiguro, Goku, Vegeta, Batman, Spider-Man, Iron Man, Thanos).
+- **Pictures:** character pictures are 640–800 px wide; category banners and galleries use official trailer stills, posters and character art.
+- **Accounts:** made in the browser (no server database). A password needs at least 6 characters; the strength meter shows Weak, Fair, Good or Strong.
+- **Checkout:** demo only; card numbers are checked for format but no payment is taken. Prices are in Pakistani rupees (PKR).
+- **Links:** live site https://fandomverse-nu.vercel.app and https://farmandevstudio.github.io/FandomVerse/. The GitHub copy's AI chat uses the Vercel server so the keys stay private.
+- **Made for:** the TechWiz7 competition, theme "Fandom Universe · Web Innovation Unleashed".
