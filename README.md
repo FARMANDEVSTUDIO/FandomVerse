@@ -21,6 +21,8 @@ No installation is needed. A portable copy of Python is included in the hidden `
 
 ## Features
 
+A page-by-page guide to every feature and how it works is in **[FEATURES.md](FEATURES.md)**.
+
 ### Content
 - **7 category hubs**, each with its own articles, characters, events, videos and merch.
 - **Articles:** long-form fan writing, with bookmarks.
