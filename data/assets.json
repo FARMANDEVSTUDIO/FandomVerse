@@ -146,7 +146,7 @@
     "id": "anime-hero-01",
     "category": "anime",
     "type": "hero",
-    "src": "assets/images/anime/hero/hero-01.jpg",
+    "src": "assets/images/anime/hero/hero-01.jpg?v=202609252319",
     "source": "official",
     "title": "JUJUTSU KAISEN Shibuya Incident — Official Trailer",
     "alt": "JUJUTSU KAISEN Shibuya Incident — Official Trailer"
@@ -227,7 +227,7 @@
     "id": "gaming-hero-01",
     "category": "gaming",
     "type": "hero",
-    "src": "assets/images/gaming/hero/hero-01.jpg",
+    "src": "assets/images/gaming/hero/hero-01.jpg?v=202609252319",
     "source": "official",
     "title": "PUBG: Battlegrounds",
     "alt": "PUBG: Battlegrounds"
@@ -308,7 +308,7 @@
     "id": "movies-hero-01",
     "category": "movies",
     "type": "hero",
-    "src": "assets/images/movies/hero/hero-01.jpg",
+    "src": "assets/images/movies/hero/hero-01.jpg?v=202609252319",
     "source": "official",
     "title": "THE BATMAN — Main Trailer",
     "alt": "THE BATMAN — Main Trailer"
@@ -389,7 +389,7 @@
     "id": "tv-shows-hero-01",
     "category": "tv-shows",
     "type": "hero",
-    "src": "assets/images/tv-shows/hero/hero-01.jpg",
+    "src": "assets/images/tv-shows/hero/hero-01.jpg?v=202609252319",
     "source": "official",
     "title": "Stranger Things 5 — Official Trailer",
     "alt": "Stranger Things 5 — Official Trailer"
@@ -470,7 +470,7 @@
     "id": "kpop-hero-01",
     "category": "kpop",
     "type": "hero",
-    "src": "assets/images/kpop/hero/hero-01.jpg",
+    "src": "assets/images/kpop/hero/hero-01.jpg?v=202609252319",
     "source": "official",
     "title": "BTS on The Tonight Show — Jimmy Interviews BTS",
     "alt": "BTS on The Tonight Show — Jimmy Interviews BTS"
@@ -551,7 +551,7 @@
     "id": "comics-hero-01",
     "category": "comics",
     "type": "hero",
-    "src": "assets/images/comics/hero/hero-01.jpg",
+    "src": "assets/images/comics/hero/hero-01.jpg?v=202609252319",
     "source": "official",
     "title": "Thor: Ragnarok — Official Trailer",
     "alt": "Thor: Ragnarok — Official Trailer"
@@ -632,7 +632,7 @@
     "id": "manga-hero-01",
     "category": "manga",
     "type": "hero",
-    "src": "assets/images/manga/hero/hero-01.jpg",
+    "src": "assets/images/manga/hero/hero-01.jpg?v=202609252319",
     "source": "official",
     "title": "ONE PIECE: Season 2 — Official Trailer (Netflix)",
     "alt": "ONE PIECE: Season 2 — Official Trailer (Netflix)"
