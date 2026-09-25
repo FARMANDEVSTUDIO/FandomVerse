@@ -145,8 +145,8 @@ window.FV = window.FV || {};
   function reminders(){
     try{
       const list = JSON.parse(localStorage.getItem("fv_remind")) || [];
-      const d = new Date(); const key = x => x.toISOString().slice(0, 10);
-      const today = key(d), tomorrow = key(new Date(d.getTime() + 864e5));
+      const d = new Date(); const key = (x => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`);   // local date, not UTC
+      const today = key(d), tomorrow = key(new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1));
       const seen = sessionStorage.getItem("fv_remind_seen") === today;
       const due = list.filter(r => r.date === today || r.date === tomorrow);
       if(!due.length || seen) return;

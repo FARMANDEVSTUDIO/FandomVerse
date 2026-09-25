@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const first = (user.name || "Fan").split(" ")[0];
     const L = FV.xpState ? FV.xpLevel(FV.xpState().xp) : null;
     const catOf = id => cats.find(c => c.id === id) || {};
-    const today = new Date().toISOString().slice(0, 10);
+    const today = (x => `${x.getFullYear()}-${String(x.getMonth() + 1).padStart(2, "0")}-${String(x.getDate()).padStart(2, "0")}`)(new Date());
     const art = pick(data.articles || [], fav, 2);
     const ev = pick((data.events || []).filter(e => e.date >= today).sort((a, b) => a.date.localeCompare(b.date)), fav, 1);
     const ch = pick((data.characters || []).slice().sort(() => Math.random() - .5), fav, 1);
