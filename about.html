@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — FandomVerse</title>
+<meta name="description" content="What FandomVerse is, what makes it different, and how it was built.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png?v=202609251727">
+<link rel="apple-touch-icon" href="assets/images/logo-180.png?v=202609251727">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css?v=202609251727">
+<link rel="stylesheet" href="css/components.css?v=202609251727">
+<link rel="stylesheet" href="css/responsive.css?v=202609251727">
+<link rel="stylesheet" href="css/glass.css?v=202609251727">
+<script>window.FV_BASE = "";</script>
+<script>(function(){try{var pf=localStorage.getItem("fv_perf")||"auto",lite=pf==="lite";if(pf==="auto"){var g=sessionStorage.getItem("fv_gpu");if(!g){var cv=document.createElement("canvas"),gl=cv.getContext("webgl",{failIfMajorPerformanceCaveat:true});g=gl?"hw":"soft";if(gl){if(/swiftshader|llvmpipe|software|basic render/i.test(String(gl.getParameter(gl.RENDERER)||"")))g="soft";var lc=gl.getExtension("WEBGL_lose_context");lc&&lc.loseContext();}sessionStorage.setItem("fv_gpu",g);}lite=g==="soft"||(navigator.hardwareConcurrency||8)<=2||(navigator.deviceMemory||8)<=2||matchMedia("(pointer:coarse) and (max-width:900px)").matches||matchMedia("(prefers-reduced-motion: reduce)").matches;}if(lite)document.documentElement.classList.add("lite");}catch(e){}try{var x=JSON.parse(localStorage.getItem("fv_a11y")||"{}"),r=document.documentElement;if(x.size)r.style.fontSize=x.size+"%";["contrast","motion","links","spacing"].forEach(function(k){if(x[k])r.classList.add("a11y-"+k)});}catch(e){}try{var t=localStorage.getItem("fv_theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");var a=localStorage.getItem("fv_accent");if(a&&/^#[0-9a-f]{6}$/i.test(a)){var s=document.documentElement.style;s.setProperty("--brand",a);s.setProperty("--cat",a);}}catch(e){}})();</script>
+</head>
+<body data-page="about">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="pl-logo"><span class="pl-empty"></span><span class="pl-fill"><i class="pl-wave"></i></span></div></div>
+<script>(function(){
+  // the logo fills with the real loading progress: pictures of this page, then the full page load
+  var p=document.getElementById("preloader");if(!p)return;
+  var f=p.querySelector(".pl-fill"),shown=0,target=6,done=false;
+  function set(v){target=Math.max(target,Math.min(v,100));}
+  function tick(){
+    if(!done&&target<88)target+=(88-target)*0.003;
+    shown+=(target-shown)*0.1;if(target-shown<0.25)shown=target;
+    f.style.height=shown.toFixed(1)+"%";
+    if(done&&shown>=99.9){p.dataset.full=String(performance.now());return;}
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  document.addEventListener("DOMContentLoaded",function(){
+    var imgs=[].slice.call(document.querySelectorAll('img:not([loading="lazy"])')),total=imgs.length+1,n=1;
+    function bump(){n++;set(25+65*n/total);}
+    set(25+65*n/total);
+    imgs.forEach(function(im){if(im.complete)bump();else{im.addEventListener("load",bump,{once:true});im.addEventListener("error",bump,{once:true});}});
+  });
+  window.addEventListener("load",function(){done=true;set(100);});
+  setTimeout(function(){done=true;set(100);},8000);
+})();</script>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand" aria-label="FandomVerse home"><span class="brand-mark"><img src="assets/images/logo.png?v=202609251727" alt="" width="40" height="40"></span><span class="brand-text">FandomVerse</span></a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="articles.html" class="nav-link" data-page="articles">Articles</a>
+      <a href="characters.html" class="nav-link" data-page="characters">Characters</a>
+      <a href="play.html" class="nav-link" data-page="play">Play</a>
+      <a href="events.html" class="nav-link" data-page="events">Events</a>
+      <a href="trailers.html" class="nav-link" data-page="trailers">Media</a>
+      <a href="merchandise.html" class="nav-link" data-page="merchandise">Merch</a>
+      <a href="about.html" class="nav-link" data-page="about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Open search" aria-expanded="false"><span data-icon="search"></span></button>
+      <button class="icon-btn cart-badge" id="cartToggle" aria-label="Open cart"><span data-icon="cart"></span><span class="cart-count hidden" id="cartCount">0</span></button>
+      <button class="btn btn-ghost btn-sm" id="loginBtn" type="button">Log in</button>
+      <button class="btn btn-primary btn-sm" id="signupBtn" type="button">Sign up</button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" type="button"><svg class="theme-icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="theme-icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="breadcrumb-bar"><div class="breadcrumb-inner"><a href="index.html">Home</a><span class="crumb-sep">/</span><span id="crumbCurrent">About</span></div><div class="live-meta"><span id="liveDate">—</span><span class="dot">·</span><time id="liveClock">--:--:--</time></div></div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true"><nav aria-label="Mobile"><a href="index.html" data-page="home">Home</a><a href="articles.html" data-page="articles">Articles</a><a href="characters.html" data-page="characters">Characters</a><a href="play.html" data-page="play">Play</a><a href="events.html" data-page="events">Events</a><a href="trailers.html" data-page="trailers">Media</a><a href="merchandise.html" data-page="merchandise">Merch</a><a href="about.html" data-page="about">About</a><a href="contact.html" data-page="contact">Contact</a></nav><div class="mobile-drawer-actions"><a class="btn btn-ghost" href="login.html">Log in</a><a class="btn btn-primary" href="signup.html">Sign up</a></div></div>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="search-panel" id="searchPanel" aria-hidden="true"><div class="search-panel-inner"><span data-icon="search"></span><input type="text" id="globalSearch" placeholder="Search articles, characters, events, merch…" autocomplete="off"><button id="searchClose" class="icon-btn" aria-label="Close search">✕</button></div><div class="search-results" id="searchResults"></div></div>
+<div class="cart-backdrop drawer-backdrop" id="cartBackdrop"></div>
+<div class="cart-drawer" id="cartDrawer"><div class="cart-head"><h3>Your cart</h3><button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button></div><div class="cart-items" id="cartItems"></div><div class="cart-foot"><div class="cart-total-row"><span>Total</span><span id="cartTotal">PKR 0</span></div><button class="btn btn-primary" style="width:100%" disabled>Checkout (not included in demo)</button><p class="cart-note">Temporary demo cart only — no real purchase happens.</p></div></div>
+
+<main id="main">
+<section class="xhero">
+  <div class="xhero-inner">
+    <div class="xhero-copy">
+      <p class="kicker">About FandomVerse</p>
+      <h1>One universe.<br>Every fandom.</h1>
+      <p class="lead">Seven fandoms in one hub: news, character profiles, fan events, official videos and merch, plus 3D characters that turn and talk, and an AI guide you can speak to.</p>
+      <div class="xhero-cta"><a class="btn btn-primary" href="characters.html#3d">Meet the 3D characters</a><a class="btn btn-outline" href="trailers.html">Watch videos</a></div>
+    </div>
+    <div class="lineup" aria-hidden="true"><img src="assets/images/characters/full/c1-front.png" alt="" loading="lazy" style="--i:0"><img src="assets/images/characters/full/c2-front.png" alt="" loading="lazy" style="--i:1"><img src="assets/images/characters/full/c3-front.png" alt="" loading="lazy" style="--i:2"><img src="assets/images/characters/full/c4-front.png" alt="" loading="lazy" style="--i:3"><img src="assets/images/characters/full/c5-front.png" alt="" loading="lazy" style="--i:4"><img src="assets/images/characters/full/c11-front.png" alt="" loading="lazy" style="--i:5"><img src="assets/images/characters/full/c14-front.png" alt="" loading="lazy" style="--i:6"><img src="assets/images/characters/full/c30-front.png" alt="" loading="lazy" style="--i:7"><img src="assets/images/characters/full/c38-front.png" alt="" loading="lazy" style="--i:8"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <dl class="stat-strip" id="aboutStats">
+      <div><dt>Fandoms</dt><dd data-stat="categories">7</dd></div>
+      <div><dt>Characters</dt><dd data-stat="characters">33</dd></div>
+      <div><dt>3D models</dt><dd data-stat="models">9</dd></div>
+      <div><dt>Real voices</dt><dd>9</dd></div>
+      <div><dt>Official videos</dt><dd data-stat="trailers">16</dd></div>
+      <div><dt>Events</dt><dd data-stat="events">21</dd></div>
+    </dl>
+
+    <div class="split">
+      <div>
+        <p class="kicker">Who we are</p>
+        <h2 class="section-title">Built by fans, for fans</h2>
+        <p class="section-lead">FandomVerse was created for the <strong>TechWiz7 — Web Innovation Unleashed</strong> competition under the theme <strong>Fandom Universe</strong>. Fans usually jump between dozens of sites to follow their favourite shows, games and groups. FandomVerse brings seven of them together in one fast, friendly hub.</p>
+      </div>
+      <div>
+        <p class="kicker">Our mission</p>
+        <h2 class="section-title">Make every fandom easy to explore</h2>
+        <p class="section-lead">Whether you're waiting for the next Jujutsu Kaisen episode, planning a PUBG squad night, counting down to a BTS comeback or re-reading One Piece, you'll find the stories, characters, events and videos for it here, and a guide to help you find them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <p class="kicker">What makes it different</p>
+    <h2 class="section-title">More than a fan wiki</h2>
+    <div class="feature-grid big">
+      <article class="info-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 22V12M21 7l-9 5-9-5"/></svg></span><h3>Characters in 3D</h3><p>Nine characters are real 3D models: drag to turn them all the way round, switch views, zoom out, even change Iron Man's armour.</p></article><article class="info-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h2M7 8v8M11 5v14M15 8v8M19 11v2"/></svg></span><h3>They speak for themselves</h3><p>Press Play voice and the character introduces itself in a recorded voice, with every word written on screen as it's said.</p></article><article class="info-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 10h8M8 13h5"/></svg></span><h3>An AI guide on every page</h3><p>Ask anything about the site in English, Urdu or Roman Urdu. It knows every character, event, price and page.</p></article><article class="info-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><h3>Talk to it, it acts</h3><p>Tap the mic and say "Goku ka page kholo" or "play the Batman trailer" and the site does it for you.</p></article><article class="info-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></span><h3>Official videos</h3><p>Trailers, interviews and behind-the-scenes clips from the studios themselves, 2 to 3 minutes each, playable right on the page.</p></article><article class="info-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Your data stays yours</h3><p>Accounts, carts, orders and bookmarks live in your own browser. Passwords are only ever stored as a secure hash.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="kicker">Everything inside</p>
+    <h2 class="section-title">Features</h2>
+    <div class="feature-grid">
+      <article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span><h3>7 category hubs</h3><p>Anime, Gaming, Movies, TV Shows, K-Pop, Comics and Manga, each with articles, characters, events, media and merch.</p></article><article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H4z"/><path d="M20 5h-5a3 3 0 0 0-3 3"/></svg></span><h3>Articles</h3><p>Long-form fan writing across every fandom, with bookmarks.</p></article><article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><h3>Events & calendar</h3><p>Watch parties, meetups and screenings, plus a release calendar.</p></article><article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg></span><h3>Merch store</h3><p>Cart per account and a full demo checkout with order history.</p></article><article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><h3>Profiles</h3><p>Picture, cover banner, theme colour, orders and bookmarks.</p></article><article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="14" r="4"/><path d="M11 11l9-9M16 6l3 3"/></svg></span><h3>Accounts</h3><p>Sign up, log in and reset a forgotten password.</p></article><article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18a9 9 0 0 0 0-18z" fill="currentColor"/></svg></span><h3>Themes & accessibility</h3><p>Light/dark mode and a settings panel for text size, contrast and motion.</p></article><article class="mini-card"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></span><h3>Works everywhere</h3><p>Designed for phones, tablets and desktops.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <p class="kicker">How we built it</p>
+    <h2 class="section-title">The journey</h2>
+    <ol class="journey-steps">
+      <li><span>01</span><h3>Plan the universe</h3><p>Seven fandoms, one design system: a glass-style dark theme, category colours and a shared card layout.</p></li>
+      <li><span>02</span><h3>Fill it with content</h3><p>Articles, 33 character profiles, 21 events, 15 releases, merch and official videos, all kept in simple JSON files.</p></li>
+      <li><span>03</span><h3>Bring characters to life</h3><p>Background-removed turnarounds, then real 3D models (compressed from up to 345 MB to a few MB) and recorded voices with word-by-word timing.</p></li>
+      <li><span>04</span><h3>Add a brain</h3><p>An AI guide with voice input that knows the whole site, works in three languages and can carry out commands.</p></li>
+      <li><span>05</span><h3>Polish for everyone</h3><p>Responsive layouts, privacy by design and an accessibility panel so every fan can use it comfortably.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <p class="kicker">Under the hood</p>
+    <h2 class="section-title">Built with</h2>
+    <ul class="tech-chips">
+      <li>HTML5</li><li>CSS3</li><li>JavaScript (ES6)</li><li>JSON data</li><li>model-viewer (3D)</li><li>Draco compression</li>
+      <li>Web Speech API</li><li>Python server</li><li>Groq · OpenRouter · Hugging Face AI</li><li>YouTube embeds</li><li>Local &amp; session storage</li><li>Google Maps embed</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="brand-text" style="font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--ink)">FandomVerse</span><p>Fandom Universe · Web Innovation Unleashed · TechWiz7</p></div>
+    <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><a href="articles.html">Articles</a><a href="characters.html">Characters</a><a href="play.html">Play &amp; games</a><a href="map.html">Universe Map</a><a href="events.html">Events</a><a href="trailers.html">Media</a></nav>
+    <nav class="footer-col" aria-label="Shop"><h4>Shop</h4><a href="merchandise.html">Merchandise</a><a href="bookmarks.html">Bookmarks</a></nav>
+    <nav class="footer-col" aria-label="Categories"><h4>Categories</h4><a href="category.html?cat=anime">Anime</a><a href="category.html?cat=gaming">Gaming</a><a href="category.html?cat=kpop">K-Pop</a><a href="category.html?cat=manga">Manga</a></nav>
+    <nav class="footer-col" aria-label="Site"><h4>Site</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a></nav>
+  </div>
+  <p class="footer-bottom">© <span id="year"></span> FandomVerse — a static, original fan-content demo. Opened <span id="localViews">1</span> time(s) on this device.</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button class="chat-fab" id="chatFab" aria-label="Open guide chat" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6z"/><circle cx="9" cy="10.5" r="1" fill="#fff" stroke="none"/><circle cx="12" cy="10.5" r="1" fill="#fff" stroke="none"/><circle cx="15" cy="10.5" r="1" fill="#fff" stroke="none"/></svg></button>
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="FandomVerse guide chat" aria-hidden="true">
+  <div class="chat-head"><div class="chat-head-info"><span class="chat-avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span><div><strong>FandomVerse Guide</strong><small>AI guide · online</small></div></div><button class="icon-btn" id="chatClose" aria-label="Close chat">✕</button></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-quick" id="chatQuick"></div>
+  <form class="chat-input-row" id="chatForm"><input type="text" id="chatInput" placeholder="Ask about categories, characters…" autocomplete="off"><button type="submit" class="btn btn-primary btn-sm">Ask</button></form>
+  <p class="chat-disclaimer">AI guide · answers can sometimes be wrong.</p>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js?v=202609251727"></script>
+<script src="js/assets.js?v=202609251727"></script>
+<script src="js/icons.js?v=202609251727"></script>
+<script src="js/poster.js?v=202609251727"></script>
+<script src="js/animations.js?v=202609251727"></script>
+<script src="js/global.js?v=202609251727"></script>
+<script src="js/auth.js?v=202609251727"></script>
+<script src="js/xp.js?v=202609251727"></script>
+<script src="js/watchlist.js?v=202609251727"></script>
+<script src="js/navigation.js?v=202609251727"></script>
+<script src="js/search.js?v=202609251727"></script>
+<script src="js/bookmarks.js?v=202609251727"></script>
+<script src="js/cart.js?v=202609251727"></script>
+<script src="js/checkout.js?v=202609251727"></script>
+<script src="js/chatbot.js?v=202609251727"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const data = await FV.data;
+  const n = { categories: (data.categories || []).length, characters: (data.characters || []).length,
+    models: (data.characters || []).filter(c => c.model || c.models).length, trailers: (data.trailers || []).length, events: (data.events || []).length };
+  document.querySelectorAll("#aboutStats [data-stat]").forEach(d => { if(n[d.dataset.stat]) d.textContent = n[d.dataset.stat]; });
+});
+</script>
+</body>
+</html>

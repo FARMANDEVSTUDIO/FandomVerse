@@ -1,0 +1,94 @@
+/* =========================================================
+   FandomVerse — Responsive breakpoints
+   ========================================================= */
+
+@media (max-width: 1100px){
+  .cat-grid{ grid-template-columns: repeat(4, 1fr); }
+  .hero-inner{ grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-visual{ height: 320px; }
+  .about-grid, .contact-grid{ grid-template-columns: 1fr; }
+  .footer-inner{ grid-template-columns: 1fr 1fr 1fr; }
+}
+
+@media (max-width: 900px){
+  .main-nav{ display: none; }
+  .hamburger{ display: flex; }
+  #loginBtn, #signupBtn{ display: none; }
+  .scenario-body-inner, .event-body-inner{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px){
+  .cat-grid{ grid-template-columns: repeat(2, 1fr); }
+  .nav-wrap{ height: 64px; padding: 0 1.2rem; }
+  .breadcrumb-bar{ padding: .5rem 1.2rem; }
+  .live-meta{ display: none; }
+  .section-inner{ padding: 3.2rem 1.2rem; }
+  .hero-inner{ padding: 3.5rem 1.2rem 3rem; }
+  .hero-stats{ gap: 1.6rem; flex-wrap: wrap; }
+  .footer-inner{ grid-template-columns: 1fr 1fr; gap: 2rem 1.4rem; }
+  .chat-window{ right: .8rem; left: .8rem; width: auto; bottom: 5.2rem; }
+  .chat-fab{ right: 1.1rem; bottom: 1.1rem; }
+  .back-to-top{ right: 1.1rem; bottom: 5.6rem; }
+  .cart-drawer{ width: 100vw; }
+  .hero-visual{ display: none; }
+}
+
+@media (max-width: 480px){
+  .cat-grid{ grid-template-columns: 1fr 1fr; }
+  .footer-inner{ grid-template-columns: 1fr 1fr; }
+  .hero-stats dd{ font-size: 1.3rem; }
+}
+
+/* ---------- phones: header always fits, menu button always reachable ---------- */
+.drawer-theme{ display: none; }
+@media (max-width: 560px){
+  .nav-wrap{ padding: 0 .9rem; gap: .5rem; }
+  .brand{ gap: .45rem; min-width: 0; }
+  .brand-mark{ width: 30px; height: 30px; flex-shrink: 0; }
+  .brand-text{ font-size: 1.05rem; white-space: nowrap; }
+  .nav-actions{ gap: .3rem; flex-shrink: 0; }
+  .nav-actions .icon-btn{ width: 36px; height: 36px; }
+  .hamburger{ width: 36px; height: 36px; }
+  #themeToggle{ display: none; }
+  .drawer-theme{
+    display: flex; align-items: center; gap: .7rem; width: 100%; margin: .4rem 0 1rem; padding: .8rem 1rem; border-radius: 12px; cursor: pointer;
+    font: 600 .95rem/1 inherit; color: var(--ink); background: var(--glass-bg-soft, rgba(255,255,255,.05)); border: 1px solid var(--glass-border, rgba(255,255,255,.1));
+  }
+  .drawer-theme-icon{ display: inline-flex; }
+  .breadcrumb-bar{ padding: .45rem .9rem; font-size: .78rem; }
+}
+@media (max-width: 360px){
+  .brand-text{ font-size: .95rem; }
+  .nav-actions .icon-btn, .hamburger{ width: 34px; height: 34px; }
+}
+.drawer-theme .theme-icon-moon{ display: none; }
+:root[data-theme="light"] .drawer-theme .theme-icon-sun{ display: none; }
+:root[data-theme="light"] .drawer-theme .theme-icon-moon{ display: inline; }
+
+/* ---------- phones: shorter scroll scenes, tidier floating buttons ---------- */
+@media (max-width: 600px){
+  .scroll-morph{ height: 210vh; }
+  .morph-arc-text h2{ font-size: 1.7rem; }
+  .morph-arc-text p{ font-size: .9rem; }
+  .journey{ height: 320vh; }
+  .chat-fab{ width: 50px; height: 50px; right: .9rem; bottom: .9rem; }
+  .back-to-top{ width: 40px; height: 40px; right: 1.35rem; bottom: 4.5rem; }
+  .site-footer{ padding-bottom: 4.5rem; }
+}
+@media (max-width: 900px){
+  .v3d-name{ white-space: normal; font-size: 1rem; line-height: 1.15; }
+  .v3d-series{ white-space: normal; }
+  .v3d-label{ padding: 2rem .8rem .9rem; }
+}
+@media (max-width: 600px){
+  .cv2-foot{ right: 4.2rem; }           /* keep "next" clear of the chat button */
+  .cv2 .cs-scene{ height: 480px; }
+}
+/* events: picture on top, date + text side by side below it */
+@media (max-width: 600px){
+  .event-card{ flex-wrap: wrap; gap: .9rem 1rem; }
+  .event-thumb{ flex: 0 0 calc(100% + 3rem); min-height: 0; height: 170px; margin: -1.3rem -1.5rem 0; border-radius: var(--radius-md) var(--radius-md) 0 0; }
+  .event-thumb .slot-img{ width: 100%; height: 100%; object-fit: cover; }
+  .event-card .event-datebox{ align-self: flex-start; }
+  .event-main{ flex: 1 1 0; }
+}

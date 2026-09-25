@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play — FandomVerse</title>
+<meta name="description" content="Daily challenge, Surprise Me, Personality Match and Character Battle.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png?v=202609251727">
+<link rel="apple-touch-icon" href="assets/images/logo-180.png?v=202609251727">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css?v=202609251727">
+<link rel="stylesheet" href="css/components.css?v=202609251727">
+<link rel="stylesheet" href="css/responsive.css?v=202609251727">
+<link rel="stylesheet" href="css/glass.css?v=202609251727">
+<script>window.FV_BASE = "";</script>
+<script>(function(){try{var pf=localStorage.getItem("fv_perf")||"auto",lite=pf==="lite";if(pf==="auto"){var g=sessionStorage.getItem("fv_gpu");if(!g){var cv=document.createElement("canvas"),gl=cv.getContext("webgl",{failIfMajorPerformanceCaveat:true});g=gl?"hw":"soft";if(gl){if(/swiftshader|llvmpipe|software|basic render/i.test(String(gl.getParameter(gl.RENDERER)||"")))g="soft";var lc=gl.getExtension("WEBGL_lose_context");lc&&lc.loseContext();}sessionStorage.setItem("fv_gpu",g);}lite=g==="soft"||(navigator.hardwareConcurrency||8)<=2||(navigator.deviceMemory||8)<=2||matchMedia("(pointer:coarse) and (max-width:900px)").matches||matchMedia("(prefers-reduced-motion: reduce)").matches;}if(lite)document.documentElement.classList.add("lite");}catch(e){}try{var x=JSON.parse(localStorage.getItem("fv_a11y")||"{}"),r=document.documentElement;if(x.size)r.style.fontSize=x.size+"%";["contrast","motion","links","spacing"].forEach(function(k){if(x[k])r.classList.add("a11y-"+k)});}catch(e){}try{var t=localStorage.getItem("fv_theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");var a=localStorage.getItem("fv_accent");if(a&&/^#[0-9a-f]{6}$/i.test(a)){var s=document.documentElement.style;s.setProperty("--brand",a);s.setProperty("--cat",a);}}catch(e){}})();</script>
+</head>
+<body data-page="play">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="pl-logo"><span class="pl-empty"></span><span class="pl-fill"><i class="pl-wave"></i></span></div></div>
+<script>(function(){
+  // the logo fills with the real loading progress: pictures of this page, then the full page load
+  var p=document.getElementById("preloader");if(!p)return;
+  var f=p.querySelector(".pl-fill"),shown=0,target=6,done=false;
+  function set(v){target=Math.max(target,Math.min(v,100));}
+  function tick(){
+    if(!done&&target<88)target+=(88-target)*0.003;
+    shown+=(target-shown)*0.1;if(target-shown<0.25)shown=target;
+    f.style.height=shown.toFixed(1)+"%";
+    if(done&&shown>=99.9){p.dataset.full=String(performance.now());return;}
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  document.addEventListener("DOMContentLoaded",function(){
+    var imgs=[].slice.call(document.querySelectorAll('img:not([loading="lazy"])')),total=imgs.length+1,n=1;
+    function bump(){n++;set(25+65*n/total);}
+    set(25+65*n/total);
+    imgs.forEach(function(im){if(im.complete)bump();else{im.addEventListener("load",bump,{once:true});im.addEventListener("error",bump,{once:true});}});
+  });
+  window.addEventListener("load",function(){done=true;set(100);});
+  setTimeout(function(){done=true;set(100);},8000);
+})();</script>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand" aria-label="FandomVerse home"><span class="brand-mark"><img src="assets/images/logo.png?v=202609251727" alt="" width="40" height="40"></span><span class="brand-text">FandomVerse</span></a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="articles.html" class="nav-link" data-page="articles">Articles</a>
+      <a href="characters.html" class="nav-link" data-page="characters">Characters</a>
+      <a href="play.html" class="nav-link" data-page="play">Play</a>
+      <a href="events.html" class="nav-link" data-page="events">Events</a>
+      <a href="trailers.html" class="nav-link" data-page="trailers">Media</a>
+      <a href="merchandise.html" class="nav-link" data-page="merchandise">Merch</a>
+      <a href="about.html" class="nav-link" data-page="about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Open search" aria-expanded="false"><span data-icon="search"></span></button>
+      <button class="icon-btn cart-badge" id="cartToggle" aria-label="Open cart"><span data-icon="cart"></span><span class="cart-count hidden" id="cartCount">0</span></button>
+      <button class="btn btn-ghost btn-sm" id="loginBtn" type="button">Log in</button>
+      <button class="btn btn-primary btn-sm" id="signupBtn" type="button">Sign up</button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" type="button"><svg class="theme-icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="theme-icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="breadcrumb-bar"><div class="breadcrumb-inner"><a href="index.html">Home</a><span class="crumb-sep">/</span><span id="crumbCurrent">Play</span></div><div class="live-meta"><span id="liveDate">—</span><span class="dot">·</span><time id="liveClock">--:--:--</time></div></div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true"><nav aria-label="Mobile"><a href="index.html" data-page="home">Home</a><a href="articles.html" data-page="articles">Articles</a><a href="characters.html" data-page="characters">Characters</a><a href="play.html" data-page="play">Play</a><a href="events.html" data-page="events">Events</a><a href="trailers.html" data-page="trailers">Media</a><a href="merchandise.html" data-page="merchandise">Merch</a><a href="about.html" data-page="about">About</a><a href="contact.html" data-page="contact">Contact</a></nav><div class="mobile-drawer-actions"><a class="btn btn-ghost" href="login.html">Log in</a><a class="btn btn-primary" href="signup.html">Sign up</a></div></div>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="search-panel" id="searchPanel" aria-hidden="true"><div class="search-panel-inner"><span data-icon="search"></span><input type="text" id="globalSearch" placeholder="Search articles, characters, events, merch…" autocomplete="off"><button id="searchClose" class="icon-btn" aria-label="Close search">✕</button></div><div class="search-results" id="searchResults"></div></div>
+<div class="cart-backdrop drawer-backdrop" id="cartBackdrop"></div>
+<div class="cart-drawer" id="cartDrawer"><div class="cart-head"><h3>Your cart</h3><button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button></div><div class="cart-items" id="cartItems"></div><div class="cart-foot"><div class="cart-total-row"><span>Total</span><span id="cartTotal">PKR 0</span></div><button class="btn btn-primary" style="width:100%" disabled>Checkout (not included in demo)</button><p class="cart-note">Temporary demo cart only — no real purchase happens.</p></div></div>
+
+<main id="main">
+<section class="xhero">
+  <div class="xhero-inner gx-hero">
+    <div class="xhero-copy">
+      <p class="kicker">Play</p>
+      <h1>Games for every fan.</h1>
+      <p class="lead">Solve today's challenge, let fate pick your fandom, find the character who matches your personality, or settle who would win. Every game earns XP for your profile.</p>
+    </div>
+    <div class="lineup gx-lineup" aria-hidden="true"><img src="assets/images/characters/full/c14-front.png" alt="" style="--i:0"><img src="assets/images/characters/full/c1-front.png" alt="" style="--i:1"><img src="assets/images/characters/full/c2-front.png" alt="" style="--i:2"><img src="assets/images/characters/full/c4-front.png" alt="" style="--i:3"><img src="assets/images/characters/full/c30-front.png" alt="" style="--i:4"></div>
+  </div>
+</section>
+
+<section class="section play-tiles-sec">
+  <div class="section-inner">
+    <div class="play-grid">
+      <a class="play-tile" href="match.html"><img class="play-art" src="assets/images/characters/c2.jpg" alt="" loading="lazy"><span class="play-ico" data-gi="heart"></span><strong>Personality Match</strong><small>Pick a character and scan how alike you are.</small></a>
+      <a class="play-tile" href="battle.html"><img class="play-art" src="assets/images/characters/c4.jpg" alt="" loading="lazy"><span class="play-ico" data-gi="swords"></span><strong>Character Battle</strong><small>Two fighters, five rounds, or a full tournament.</small></a>
+      <a class="play-tile" href="#daily"><img class="play-art" src="assets/images/characters/c33.jpg" alt="" loading="lazy"><span class="play-ico" data-gi="bolt"></span><strong>Daily Challenge</strong><small>Guess today's character from three clues.</small></a>
+      <a class="play-tile" href="map.html"><img class="play-art" src="assets/images/characters/c32.jpg" alt="" loading="lazy"><span class="play-ico" data-gi="compass"></span><strong>Universe Map</strong><small>Fly between fandom planets and meet their characters.</small></a>
+      <a class="play-tile" href="#surprise"><img class="play-art" src="assets/images/characters/c30.jpg" alt="" loading="lazy"><span class="play-ico" data-gi="dice"></span><strong>Surprise Me</strong><small>A random fandom, character, story and video.</small></a>
+    </div>
+  </div>
+</section>
+
+<section class="section play-sec" id="daily">
+  <div class="section-inner">
+    <div class="play-panel dc-wrap">
+      <div class="dc-main">
+        <p class="kicker">Daily Challenge · <span id="dcDate"></span></p>
+        <h2>Who is today's character?</h2>
+        <p class="play-sub">Three clues, four faces. A wrong guess reveals the next clue and sharpens the picture.</p>
+        <ol class="dc-clues" id="dcClues"></ol>
+        <div class="dc-opts" id="dcOpts"></div>
+        <div class="dc-result" id="dcResult" hidden></div>
+      </div>
+      <div class="dc-mystery" id="dcMystery">
+        <img id="dcImg" alt="">
+        <span class="dc-q" aria-hidden="true">?</span>
+        <p class="dc-streak" id="dcStreak"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section play-sec" id="surprise">
+  <div class="section-inner">
+    <div class="play-panel">
+      <div class="sp-head">
+        <div>
+          <p class="kicker">Surprise Me</p>
+          <h2>Your fandom for today</h2>
+          <p class="play-sub">Can't decide what to explore? Let the verse pick for you.</p>
+        </div>
+        <button class="btn btn-primary" type="button" id="spRoll"><span data-gi="dice"></span><span id="spRollTxt">Surprise me</span></button>
+      </div>
+      <div class="sp-out" id="spOut" hidden></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="brand-text" style="font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--ink)">FandomVerse</span><p>Fandom Universe · Web Innovation Unleashed · TechWiz7</p></div>
+    <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><a href="articles.html">Articles</a><a href="characters.html">Characters</a><a href="play.html">Play &amp; games</a><a href="map.html">Universe Map</a><a href="events.html">Events</a><a href="trailers.html">Media</a></nav>
+    <nav class="footer-col" aria-label="Shop"><h4>Shop</h4><a href="merchandise.html">Merchandise</a><a href="bookmarks.html">Bookmarks</a></nav>
+    <nav class="footer-col" aria-label="Categories"><h4>Categories</h4><a href="category.html?cat=anime">Anime</a><a href="category.html?cat=gaming">Gaming</a><a href="category.html?cat=kpop">K-Pop</a><a href="category.html?cat=manga">Manga</a></nav>
+    <nav class="footer-col" aria-label="Site"><h4>Site</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a></nav>
+  </div>
+  <p class="footer-bottom">© <span id="year"></span> FandomVerse — a static, original fan-content demo. Opened <span id="localViews">1</span> time(s) on this device.</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button class="chat-fab" id="chatFab" aria-label="Open guide chat" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6z"/><circle cx="9" cy="10.5" r="1" fill="#fff" stroke="none"/><circle cx="12" cy="10.5" r="1" fill="#fff" stroke="none"/><circle cx="15" cy="10.5" r="1" fill="#fff" stroke="none"/></svg></button>
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="FandomVerse guide chat" aria-hidden="true">
+  <div class="chat-head"><div class="chat-head-info"><span class="chat-avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span><div><strong>FandomVerse Guide</strong><small>AI guide · online</small></div></div><button class="icon-btn" id="chatClose" aria-label="Close chat">✕</button></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-quick" id="chatQuick"></div>
+  <form class="chat-input-row" id="chatForm"><input type="text" id="chatInput" placeholder="Ask about categories, characters…" autocomplete="off"><button type="submit" class="btn btn-primary btn-sm">Ask</button></form>
+  <p class="chat-disclaimer">AI guide · answers can sometimes be wrong.</p>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js?v=202609251727"></script>
+<script src="js/assets.js?v=202609251727"></script>
+<script src="js/icons.js?v=202609251727"></script>
+<script src="js/poster.js?v=202609251727"></script>
+<script src="js/animations.js?v=202609251727"></script>
+<script src="js/global.js?v=202609251727"></script>
+<script src="js/auth.js?v=202609251727"></script>
+<script src="js/xp.js?v=202609251727"></script>
+<script src="js/watchlist.js?v=202609251727"></script>
+<script src="js/navigation.js?v=202609251727"></script>
+<script src="js/search.js?v=202609251727"></script>
+<script src="js/bookmarks.js?v=202609251727"></script>
+<script src="js/cart.js?v=202609251727"></script>
+<script src="js/checkout.js?v=202609251727"></script>
+<script src="js/chatbot.js?v=202609251727"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const esc = s => FV.escapeHtml(String(s ?? ""));
+  document.querySelectorAll("[data-gi]").forEach(el => el.innerHTML = FV.gi(el.dataset.gi, el.classList.contains("play-ico") ? 24 : 16));
+  const data = await FV.data;
+  const chars = data.characters || [], cats = data.categories || [], arts = data.articles || [], vids = data.trailers || [];
+  const catOf = id => cats.find(c => c.id === id) || {};
+  const img = c => `assets/images/characters/${c.id}.jpg`;
+  const shuffle = a => { a = a.slice(); for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const store = { get(k, d){ try{ return JSON.parse(localStorage.getItem(k)) ?? d; }catch(e){ return d; } }, set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} } };
+
+  // ---------- Daily Challenge: three clues, the same character for everyone on the same day
+  const CLUES = {
+    c1: ["Pink hair and a red hoodie under a school uniform", "Swallowed something he really shouldn't have", "Shares his body with the King of Curses"],
+    c2: ["Always wears a blindfold or dark glasses", "Calls himself the strongest, and means it", "Teaches at a school for sorcerers"],
+    c3: ["Spiky black hair and a serious face", "Summons animals from shadows", "His ten shadows technique is a family secret"],
+    c4: ["Loves food almost as much as fighting", "His hair turns golden when he powers up", "Raised on Earth, born a Saiyan"],
+    c5: ["Calls himself a prince, loudly and often", "Has spent years trying to beat his rival", "Hair like a flame, attitude to match"],
+    c6: ["Dropped onto an island with nothing but a parachute", "Must be the last one standing", "Loots every house on the way"],
+    c7: ["Waits for hours without moving", "One shot, from very far away", "Best friend: a scope"],
+    c8: ["Keeps the squad alive", "Always carries a first aid kit", "Runs toward danger to revive a teammate"],
+    c9: ["Knows every road on the map", "Gets the squad out when the zone closes", "Never leaves the wheel"],
+    c10: ["Gives the calls on the radio", "Plans the drop point", "Takes care of the whole team"],
+    c11: ["A billionaire by day", "Has no superpowers, only gadgets and training", "Protects Gotham City at night"],
+    c14: ["Was bitten by a special spider", "Lives in Queens with his aunt", "With great power comes great responsibility"],
+    c30: ["Genius, billionaire, inventor", "Built his first suit in a cave", "Says 'I am…' at the most famous moment"],
+    c38: ["Collected six colourful stones", "Wanted to wipe out half of all life", "Snapped his fingers, and everything changed"],
+    c16: ["Has a number instead of a name", "Loves Eggo waffles", "Moves things with her mind; her nose bleeds when she does"],
+    c17: ["Leader of a group of friends on bikes", "Dungeon master at game night", "Found a girl with a shaved head in the woods"],
+    c18: ["Police chief of a small town", "Tough on the outside, soft on the inside", "Became a dad again to a girl with powers"],
+    c19: ["A lone crusader in a dangerous world", "His partner is a car", "Wears a leather jacket in the 1980s"],
+    c20: ["Talks, thinks and jokes, but isn't a person", "Has a red scanner light on the front", "A black car with artificial intelligence"],
+    c21: ["Leader of a seven-member group", "Speaks English fluently and gave a speech at the UN", "Writes a lot of the lyrics"],
+    c22: ["Known for dad jokes", "Calls himself 'Worldwide Handsome'", "The eldest member of the group"],
+    c23: ["Producer and rapper", "Also releases music as Agust D", "Loves sleeping, and his cat-like calm"],
+    c24: ["Called the group's sunshine", "Main dancer with non-stop energy", "His name sounds like hope"],
+    c25: ["Trained in contemporary dance", "Known for his kind, caring heart", "Released the solo 'Like Crazy'"],
+    c26: ["Deep, low singing voice", "Famous for his 'Kim Taehyung' visuals", "Coined the phrase 'I purple you'"],
+    c27: ["The youngest, the 'Golden Maknae'", "Good at singing, dancing, and almost everything", "Solo hit 'Seven'"],
+    c28: ["Swings between skyscrapers", "Shoots webs from his wrists", "Your friendly neighbourhood hero"],
+    c29: ["A super-soldier from World War II", "Carries a round shield", "Frozen in ice for decades"],
+    c30x: [],
+    c31: ["A scientist who got too much gamma radiation", "Turns green when he's angry", "'You wouldn't like me when I'm angry'"],
+    c32: ["God of Thunder", "Carries a hammer only the worthy can lift", "Prince of Asgard"],
+    c33: ["Wears a straw hat", "Wants to become King of the Pirates", "His body stretches like rubber"],
+    c34: ["Fights with three swords", "Gets lost everywhere he goes", "Green hair, wants to be the world's greatest swordsman"],
+    c36: ["The ship's cook", "Fights only with his legs", "Has a curly eyebrow and loves romance"]
+  };
+  const pool = chars.filter(c => (CLUES[c.id] || []).length === 3);
+  const today = new Date(), dayKey = today.toISOString().slice(0, 10);
+  document.getElementById("dcDate").textContent = today.toLocaleDateString(undefined, { day: "numeric", month: "long" });
+  const dayNum = Math.floor(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) / 864e5);
+  const answer = pool[(dayNum * 7) % pool.length];
+  // four choices: the answer plus three others, in a fixed order for today
+  const others = pool.filter(c => c.id !== answer.id);
+  const opts = [answer, others[(dayNum * 3) % others.length], others[(dayNum * 5 + 1) % others.length], others[(dayNum * 11 + 2) % others.length]]
+    .filter((c, i, a) => a.findIndex(x => x.id === c.id) === i);
+  while(opts.length < 4) opts.push(others.find(c => !opts.includes(c)));
+  // the right answer moves to a different spot each day
+  opts.splice(opts.indexOf(answer), 1);
+  opts.splice((dayNum * 3) % 4, 0, answer);
+
+  let daily = store.get("fv_daily", { day: "", shown: 1, tried: [], done: false, won: false, streak: 0, last: "" });
+  if(daily.day !== dayKey) daily = { day: dayKey, shown: 1, tried: [], done: false, won: false, streak: daily.streak || 0, last: daily.last || "" };
+  function drawDaily(){
+    document.getElementById("dcClues").innerHTML = CLUES[answer.id].map((c, i) => {
+      const open = i < daily.shown || daily.done;
+      return `<li class="${open ? "on" : ""}"><b>${i + 1}</b><span>${open ? esc(c) : "Locked: a wrong guess reveals this clue"}</span>${open ? "" : FV.gi("lock", 15)}</li>`;
+    }).join("");
+    const mys = document.getElementById("dcMystery");
+    document.getElementById("dcImg").src = img(answer);
+    mys.dataset.level = daily.done ? "done" : String(daily.shown);
+    document.getElementById("dcOpts").innerHTML = opts.map(c => {
+      const st = daily.done && c.id === answer.id ? "right" : daily.tried.includes(c.id) ? "wrong" : "";
+      return `<button type="button" class="dc-opt ${st}" data-id="${c.id}" ${daily.done || st ? "disabled" : ""}><img src="${img(c)}" alt=""><span>${esc(c.name)}</span></button>`;
+    }).join("");
+    const res = document.getElementById("dcResult");
+    res.hidden = !daily.done;
+    if(daily.done) res.innerHTML = daily.won
+      ? `<strong>Correct! It's ${esc(answer.name)}.</strong><span>You got it with ${daily.shown} clue${daily.shown > 1 ? "s" : ""}. Come back tomorrow for a new one.</span><a class="btn btn-outline btn-sm" href="character.html?id=${answer.id}">Open ${esc(answer.name)}</a>`
+      : `<strong>It was ${esc(answer.name)}.</strong><span>So close. A new character arrives tomorrow.</span><a class="btn btn-outline btn-sm" href="character.html?id=${answer.id}">Meet ${esc(answer.name)}</a>`;
+    document.getElementById("dcStreak").innerHTML = daily.streak ? FV.gi("flame", 16) + `Streak: ${daily.streak} day${daily.streak > 1 ? "s" : ""}` : "";
+  }
+  document.getElementById("dcOpts").addEventListener("click", e => {
+    const b = e.target.closest(".dc-opt"); if(!b || daily.done) return;
+    if(b.dataset.id === answer.id){
+      daily.done = daily.won = true;
+      const y = new Date(today - 864e5).toISOString().slice(0, 10);
+      daily.streak = daily.last === y ? daily.streak + 1 : 1;
+      daily.last = dayKey;
+      FV.addXP && FV.addXP(20, "daily");
+    }else{
+      daily.tried.push(b.dataset.id);
+      if(daily.shown < 3) daily.shown++;
+      else { daily.done = true; daily.won = false; daily.streak = 0; }
+    }
+    store.set("fv_daily", daily); drawDaily();
+  });
+  drawDaily();
+
+  // ---------- Surprise Me
+  let spins = 0;
+  document.getElementById("spRoll").addEventListener("click", () => {
+    const cat = shuffle(cats.filter(k => chars.some(c => c.category === k.id)))[0];
+    const c = shuffle(chars.filter(x => x.category === cat.id))[0];
+    const a = shuffle(arts.filter(x => x.category === cat.id))[0] || shuffle(arts)[0];
+    const v = shuffle(vids.filter(x => x.category === cat.id))[0] || shuffle(vids)[0];
+    const out = document.getElementById("spOut");
+    out.hidden = false;
+    const cap = t => (t || "video").replace(/^./, m => m.toUpperCase());
+    const row = (href, icon, label, title) => `<a class="sp-row" href="${href}"><span class="sp-ico">${FV.gi(icon, 20)}</span>
+        <span class="sp-txt"><small>${label}</small><strong>${esc(title)}</strong></span><span class="sp-go">${FV.gi("arrow", 18)}</span></a>`;
+    out.innerHTML = `
+      <div class="sp-hero" style="--c:${cat.color};--c2:${cat.color2}">
+        <img src="${img(c)}" alt="">
+        <div class="sp-hero-body">
+          <p class="sp-tag">${esc(cat.name)}<span>${esc(cat.tagline || "")}</span></p>
+          <h3>${esc(c.name)}</h3>
+          <p class="sp-series">${esc(c.series)}</p>
+          <div class="sp-btns">
+            <a class="btn btn-primary btn-sm" href="character.html?id=${c.id}">Open profile</a>
+            <a class="btn btn-outline btn-sm sp-ghost" href="match.html?id=${c.id}">Match with ${esc(c.name.split(" / ").pop())}</a>
+          </div>
+        </div>
+      </div>
+      <div class="sp-list">
+        <p class="sp-list-head">Your picks for today</p>
+        ${a ? row(`articles.html?id=${a.id}`, "book", `Read · ${esc(a.readTime || "article")}`, a.title) : ""}
+        ${v ? row(`trailers.html?play=${v.id}`, "play", `Watch · ${esc(cap(v.type))}`, v.title) : ""}
+        ${row(`category.html?cat=${cat.id}`, "compass", "Explore", `Everything in ${cat.name}`)}
+      </div>`;
+    out.classList.remove("spin"); void out.offsetWidth; out.classList.add("spin");
+    document.getElementById("spRollTxt").textContent = "Roll again";
+    if(++spins <= 5) FV.addXP && FV.addXP(2, "surprise");
+  });
+});
+</script>
+</body>
+</html>

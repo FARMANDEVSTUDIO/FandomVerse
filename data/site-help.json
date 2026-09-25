@@ -1,0 +1,340 @@
+[
+ {
+  "keys": [
+   "what is fandomverse",
+   "fandomverse kya",
+   "about the site",
+   "about website",
+   "website ke baare",
+   "is website",
+   "who made",
+   "kisne banaya",
+   "techwiz",
+   "competition",
+   "purpose",
+   "mission",
+   "kisne",
+   "banayi",
+   "banai",
+   "made this",
+   "made by",
+   "who built",
+   "creator",
+   "developer",
+   "team"
+  ],
+  "answer": "FandomVerse is a fan portal that brings seven fandoms together in one place: Anime, Gaming, Movies, TV Shows, K-Pop, Comics and Manga. It has news articles, character profiles (nine with full 3D models and real voices), fan events, a release calendar, official videos and a demo merch shop. It was built for the TechWiz7 'Web Innovation Unleashed' competition under the theme Fandom Universe."
+ },
+ {
+  "keys": [
+   "categories",
+   "category",
+   "fandoms",
+   "kitni categories",
+   "which fandoms",
+   "sections"
+  ],
+  "answer": "There are seven categories: Anime, Gaming, Movies, TV Shows, K-Pop, Comics and Manga. Each has its own page with articles, characters, events, media and merch, reachable from the home page or the footer."
+ },
+ {
+  "keys": [
+   "search",
+   "dhoond",
+   "find something",
+   "kaise dhoond"
+  ],
+  "answer": "Click the magnifying-glass icon in the top bar and start typing. Results from articles, characters, events and merchandise appear as you type; click one to open it. You can also ask me, e.g. \"search PUBG\"."
+ },
+ {
+  "keys": [
+   "sign up",
+   "signup",
+   "register",
+   "account banao",
+   "account kaise",
+   "create account",
+   "new account"
+  ],
+  "answer": "Open Sign up from the top bar, enter your name (letters only), email and a password of at least 6 characters. After that you can log in. Accounts are saved in your own browser only."
+ },
+ {
+  "keys": [
+   "log in",
+   "login",
+   "sign in",
+   "logout",
+   "log out"
+  ],
+  "answer": "Click Log in at the top right and use the email and password you signed up with. You need an account first. To log out, click your name at the top right and choose Log out."
+ },
+ {
+  "keys": [
+   "forgot password",
+   "password bhool",
+   "reset password",
+   "password change",
+   "password reset",
+   "bhool gaya"
+  ],
+  "answer": "On the Log in page click \"Forgot password?\". Enter your email, the exact name you signed up with, and a new password twice, then press Set new password. After that, log in with the new password."
+ },
+ {
+  "keys": [
+   "profile",
+   "my account",
+   "name change",
+   "naam badal",
+   "profile picture",
+   "avatar",
+   "dp",
+   "photo lagao",
+   "cover",
+   "banner"
+  ],
+  "answer": "Click your name at the top right and choose My profile. There you can change your name, upload a profile picture or paste an image link, set a cover banner (any size, shown in full), pick a theme colour, switch light or dark mode, and see your orders and bookmarks."
+ },
+ {
+  "keys": [
+   "theme",
+   "colour",
+   "color",
+   "dark mode",
+   "light mode",
+   "rang"
+  ],
+  "answer": "Use the sun/moon button at the top right (inside the menu on phones) to switch light and dark mode. On your profile page you can also pick an accent colour for the whole site. The site remembers your choice."
+ },
+ {
+  "keys": [
+   "cart",
+   "add to cart",
+   "buy",
+   "kharid",
+   "order kaise",
+   "shopping"
+  ],
+  "answer": "Go to the Merch page and press Add to cart on any item. You must be logged in first. The cart icon in the top bar shows your items and total, and each account has its own cart."
+ },
+ {
+  "keys": [
+   "checkout",
+   "payment",
+   "pay",
+   "card",
+   "cash on delivery",
+   "cod",
+   "delivery",
+   "real payment"
+  ],
+  "answer": "Checkout asks for your name, phone (Pakistani mobile number), email, address and city, and lets you choose card or cash on delivery. It is a demo: no real payment is taken and nothing is shipped. The order is saved under My orders on your profile."
+ },
+ {
+  "keys": [
+   "orders",
+   "my orders",
+   "order history",
+   "mera order"
+  ],
+  "answer": "Your orders are on your profile page under My orders (click your name at the top right). Each order shows its items, total, payment method and city."
+ },
+ {
+  "keys": [
+   "is the merchandise real",
+   "merch real",
+   "real products",
+   "asli"
+  ],
+  "answer": "The merch items and prices are demo content for this project. You can browse, add to cart and try the full checkout, but no real payment or delivery happens."
+ },
+ {
+  "keys": [
+   "bookmark",
+   "save",
+   "favourite",
+   "favorite"
+  ],
+  "answer": "Click the bookmark icon on any article or character card to save it. Your saved items are on the Bookmarks page (also linked from your profile). They are stored in your browser."
+ },
+ {
+  "keys": [
+   "3d",
+   "rotate",
+   "ghuma",
+   "turn the model",
+   "360",
+   "zoom"
+  ],
+  "answer": "Nine characters have full 3D models: Yuji Itadori, Satoru Gojo, Megumi Fushiguro, Goku, Vegeta, Batman, Spider-Man, Iron Man and Thanos. Open one from the 3D models tab on the Characters page, then drag left or right to turn it 360 degrees, use the Front/Left/Right/Back buttons, or scroll to zoom out. Iron Man has two armours to switch between."
+ },
+ {
+  "keys": [
+   "voice",
+   "awaaz",
+   "play voice",
+   "speak",
+   "bolta",
+   "sound"
+  ],
+  "answer": "On a 3D character's page press Play voice: the character introduces itself in a recorded voice and the words appear on screen as they are spoken. Stop pauses both, Resume continues, Start over begins again. Characters without a recording use the browser's voice."
+ },
+ {
+  "keys": [
+   "video",
+   "trailer",
+   "media page",
+   "watch",
+   "interview"
+  ],
+  "answer": "The Media page has official trailers, interviews and behind-the-scenes videos for every fandom, each 2 to 3 minutes. Filter by category or type and click a card to watch it in a pop-up player. Say \"play the Batman trailer\" and I will open it for you."
+ },
+ {
+  "keys": [
+   "events page",
+   "release calendar",
+   "calendar",
+   "releases"
+  ],
+  "answer": "The Events page lists fan events (watch parties, meetups, screenings, tournaments) with dates and places, filterable by category, plus a release calendar of upcoming chapters, episodes, games and films."
+ },
+ {
+  "keys": [
+   "contact",
+   "email",
+   "phone number",
+   "address",
+   "location",
+   "rabta",
+   "feedback"
+  ],
+  "answer": "Use the Contact page: it has a feedback form with a star rating, the contact details (hello@fandomverse.demo, +92 300 0000000, Aptech Campus, Pakistan; these are demo details) and a map with directions."
+ },
+ {
+  "keys": [
+   "chatbot",
+   "chat",
+   "assistant",
+   "ai",
+   "voice chat",
+   "mic",
+   "language",
+   "zabaan",
+   "urdu",
+   "hindi"
+  ],
+  "answer": "I'm the FandomVerse Guide. You can type or tap the mic and speak in English, Hinglish, Urdu or Hindi (the chip next to the mic changes the language). I answer questions about the site and can also do things for you: open pages, play videos, search, switch dark mode or open your cart."
+ },
+ {
+  "keys": [
+   "privacy",
+   "data",
+   "safe",
+   "stored",
+   "secure"
+  ],
+  "answer": "Accounts, carts, bookmarks and orders are stored in your own browser, not sent anywhere. Passwords are never saved as plain text, only as a secure hash. The full details are on the Privacy page (footer)."
+ },
+ {
+  "keys": [
+   "technology",
+   "built with",
+   "tech stack",
+   "html",
+   "css",
+   "javascript",
+   "kaise bani"
+  ],
+  "answer": "FandomVerse is built with HTML5, CSS3 and plain JavaScript reading JSON data files, with model-viewer for the 3D models, the browser's speech features for voice, and a small Python server that connects the chat to an AI model and keeps the API key private."
+ },
+ {
+  "keys": [
+   "accessibility",
+   "screen reader",
+   "keyboard",
+   "blind",
+   "disabled",
+   "reduced motion",
+   "contrast"
+  ],
+  "answer": "FandomVerse works with the keyboard (Tab, Enter, Escape), screen readers, dark and light mode, reduced motion, phone screens and 200% zoom. Characters' spoken words appear on screen, and you can talk to the chat by voice. Details are on the Accessibility page (footer)."
+ },
+ {
+  "keys": [
+   "play",
+   "games",
+   "game",
+   "khel",
+   "quiz",
+   "fun",
+   "kya khel",
+   "play page"
+  ],
+  "answer": "The Play page has five things to do: Personality Match, Character Battle (1 vs 1 or an 8-fighter tournament), a Daily Challenge where you guess the character from three clues, Surprise Me for a random fandom, character, story and video, and the Universe Map. Every game earns XP for your profile."
+ },
+ {
+  "keys": [
+   "personality",
+   "match",
+   "which character am i",
+   "kaun sa character",
+   "mera character",
+   "similar to me",
+   "like me"
+  ],
+  "answer": "Personality Match: pick any character, describe yourself or answer eight quick lines, then scan. You get a match percentage (very high, high, low or very low), a score for each trait like Strategy or Humour, and the character closest to you overall. Open it from Play or from the button on any character page."
+ },
+ {
+  "keys": [
+   "battle",
+   "fight",
+   "who wins",
+   "vs",
+   "tournament",
+   "larai",
+   "kaun jeetega",
+   "bracket"
+  ],
+  "answer": "Character Battle: pick two fighters and call the winner; five rounds of power, speed, smarts, defense and skill decide it. In Tournament mode eight fighters enter, you predict the champion, and the stats decide every match. A right prediction gives +25 XP."
+ },
+ {
+  "keys": [
+   "xp",
+   "level",
+   "badge",
+   "badges",
+   "points",
+   "achievement",
+   "rank"
+  ],
+  "answer": "You earn XP for exploring: opening characters and categories, reading articles, Personality Match, battles, tournaments and the daily challenge. XP raises your fan level and unlocks ten badges. See them on your Profile page."
+ },
+ {
+  "keys": [
+   "map",
+   "universe map",
+   "galaxy",
+   "planet",
+   "naksha"
+  ],
+  "answer": "The Universe Map shows the seven fandoms as planets around FandomVerse. Tap a planet to fly in; its characters orbit as moons and open their profile when tapped."
+ },
+ {
+  "keys": [
+   "watchlist",
+   "wishlist",
+   "remind",
+   "reminder",
+   "yaad"
+  ],
+  "answer": "Tap Watchlist on any trailer to save it (it shows on your Profile), the heart on merch to save it to your wishlist (filter with My wishlist), and Remind me on an upcoming release in Events to get a note on the day before and on the day."
+ },
+ {
+  "keys": [
+   "daily",
+   "daily challenge",
+   "today",
+   "clue",
+   "guess"
+  ],
+  "answer": "The Daily Challenge on the Play page gives three clues about one character each day. A wrong guess reveals the next clue. Solving it gives +20 XP and keeps your streak going."
+ }
+]

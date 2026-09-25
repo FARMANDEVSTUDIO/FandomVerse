@@ -1,0 +1,151 @@
+[
+  {
+    "id": "t1",
+    "category": "anime",
+    "type": "trailer",
+    "youtube": "9OhV3IWUsxE",
+    "title": "JUJUTSU KAISEN Shibuya Incident — Official Trailer",
+    "description": "Crunchyroll's trailer for the Shibuya Incident arc: Yuji, Megumi and Gojo walk into the night that changes everything.",
+    "duration": "1:35"
+  },
+  {
+    "id": "t2",
+    "category": "anime",
+    "type": "trailer",
+    "youtube": "WrgZ6Wn7-GE",
+    "title": "Dragon Ball DAIMA — Official Trailer (Netflix)",
+    "description": "Goku and friends are suddenly turned small by a conspiracy, and head to the Demon Realm to set things right.",
+    "duration": "2:23"
+  },
+  {
+    "id": "t4",
+    "category": "gaming",
+    "type": "trailer",
+    "youtube": "u1oqfdh4xBY",
+    "title": "PUBG: BATTLEGROUNDS — Cinematic Trailer",
+    "description": "The official cinematic trailer: one hundred players, one island, and a single winner dinner.",
+    "duration": "2:01"
+  },
+  {
+    "id": "t5",
+    "category": "gaming",
+    "type": "trailer",
+    "youtube": "fbn43Qu0j-U",
+    "title": "PUBG: Battlegrounds — 8th Anniversary Update Overview",
+    "description": "What's new for the game's 8th anniversary: maps, modes and the changes players asked for.",
+    "duration": "2:33"
+  },
+  {
+    "id": "t6",
+    "category": "movies",
+    "type": "trailer",
+    "youtube": "mqqft2x_Aa4",
+    "title": "THE BATMAN — Main Trailer",
+    "description": "Robert Pattinson's detective Batman hunts the Riddler through a rain-soaked, corrupt Gotham.",
+    "duration": "2:38"
+  },
+  {
+    "id": "t7",
+    "category": "movies",
+    "type": "trailer",
+    "youtube": "JfVOs4VSpmA",
+    "title": "SPIDER-MAN: NO WAY HOME — Official Trailer",
+    "description": "Peter's secret is out, Doctor Strange's spell goes wrong, and the multiverse breaks open.",
+    "end": 180,
+    "duration": "3:00"
+  },
+  {
+    "id": "t8",
+    "category": "movies",
+    "type": "trailer",
+    "youtube": "TcMBFSGVi1c",
+    "title": "Avengers: Endgame — Official Trailer",
+    "description": "After Thanos' snap, the remaining Avengers, Iron Man among them, assemble one last time.",
+    "duration": "2:26"
+  },
+  {
+    "id": "t9",
+    "category": "tv-shows",
+    "type": "trailer",
+    "youtube": "PssKpzB0Ah0",
+    "title": "Stranger Things 5 — Official Trailer",
+    "description": "Hawkins is scarred by the Rifts, and the friends unite for one goal: find and kill Vecna.",
+    "duration": "2:54"
+  },
+  {
+    "id": "t10",
+    "category": "tv-shows",
+    "type": "behind the scenes",
+    "youtube": "bLxvdUroRic",
+    "title": "One Last Adventure: The Making of Stranger Things 5",
+    "description": "Netflix's documentary trailer going behind the scenes of the final season.",
+    "duration": "2:07"
+  },
+  {
+    "id": "t11",
+    "category": "tv-shows",
+    "type": "clip",
+    "youtube": "V9cwhvpB-30",
+    "title": "Knight Rider — KITT Introduction",
+    "description": "Michael Knight meets KITT, his talking AI car partner, for the very first time.",
+    "end": 170,
+    "duration": "2:50"
+  },
+  {
+    "id": "t12",
+    "category": "kpop",
+    "type": "interview",
+    "youtube": "W4mmfzFazoI",
+    "title": "BTS on The Tonight Show — Jimmy Interviews BTS",
+    "description": "Jimmy Fallon sits down with RM, Jin, SUGA, j-hope, Jimin, V and Jung Kook.",
+    "end": 180,
+    "duration": "3:00"
+  },
+  {
+    "id": "t13",
+    "category": "kpop",
+    "type": "interview",
+    "youtube": "QV7lClfeYNY",
+    "title": "BTS Surprises Fans and Talks ARIRANG",
+    "description": "BTS return to The Tonight Show, surprise fans at the Guggenheim and talk about their album ARIRANG.",
+    "end": 180,
+    "duration": "3:00"
+  },
+  {
+    "id": "t14",
+    "category": "comics",
+    "type": "trailer",
+    "youtube": "cqGjhVJWtEg",
+    "title": "Spider-Man: Across the Spider-Verse — Official Trailer",
+    "description": "Miles Morales swings across the multiverse and meets a whole society of Spider-People straight out of the comics.",
+    "duration": "2:30"
+  },
+  {
+    "id": "t15",
+    "category": "comics",
+    "type": "trailer",
+    "youtube": "ue80QwXMRHg",
+    "title": "Thor: Ragnarok — Official Trailer",
+    "description": "Thor loses his hammer, lands on Sakaar and faces the Hulk in the arena.",
+    "duration": "2:26"
+  },
+  {
+    "id": "t16",
+    "category": "manga",
+    "type": "trailer",
+    "youtube": "Ades3pQbeh8",
+    "title": "ONE PIECE (Netflix) — Official Trailer",
+    "description": "The live-action adventure of Monkey D. Luffy and the Straw Hat Pirates, from Eiichiro Oda's manga.",
+    "end": 180,
+    "duration": "3:00"
+  },
+  {
+    "id": "t17",
+    "category": "manga",
+    "type": "trailer",
+    "youtube": "S-XxKVxZ2fU",
+    "title": "ONE PIECE: Season 2 — Official Trailer (Netflix)",
+    "description": "Luffy and the Straw Hats sail into the Grand Line in the second live-action season.",
+    "duration": "3:00"
+  }
+]

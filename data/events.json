@@ -1,0 +1,29 @@
+[
+  { "id": "e1", "category": "anime", "art": "a1", "title": "Jujutsu Kaisen Season Premiere Watch Party", "date": "2026-10-03", "location": "Online — Global Stream", "description": "Watch the new season's first episode together with fans worldwide, followed by a live reaction and theory panel." },
+  { "id": "e2", "category": "anime", "art": "a1", "title": "Jujutsu Kaisen Cosplay Meetup", "date": "2026-10-24", "location": "Expo Centre, Karachi", "description": "Dress up as Yuji, Gojo, Megumi, or your favourite sorcerer and join the group photo shoot and costume contest." },
+  { "id": "e3", "category": "anime", "art": "a2", "title": "Dragon Ball Z Marathon Night", "date": "2026-11-14", "location": "City Cinema, Screen 2", "description": "An all-night screening of the most famous Dragon Ball Z battles, from the Saiyan Saga to the Cell Games." },
+
+  { "id": "e4", "category": "gaming", "art": "a3", "title": "PUBG Campus Squad Tournament", "date": "2026-10-10", "location": "Aptech Campus Gaming Lab", "description": "Four-player squads battle it out for the campus championship, with live casting on the big screen." },
+  { "id": "e5", "category": "gaming", "art": "a4", "title": "PUBG Survival Workshop", "date": "2026-10-31", "location": "Online — Discord Stage", "description": "Top players share landing spots, rotations, and end-circle tips in a live Q&A session." },
+  { "id": "e6", "category": "gaming", "art": "a3", "title": "PUBG Solo Showdown", "date": "2026-12-05", "location": "Regional Gaming Arena", "description": "One hundred players, solo mode only — last player standing takes the trophy." },
+
+  { "id": "e7", "category": "movies", "art": "a5", "title": "The Batman Fan Screening", "date": "2026-10-17", "location": "Nueplex Cinema", "description": "A special screening of The Batman followed by a discussion on the film's detective-noir style." },
+  { "id": "e8", "category": "movies", "art": "a6", "title": "Spider-Man: No Way Home Anniversary Night", "date": "2026-11-07", "location": "Cinepax, Lucky One Mall", "description": "Relive the multiverse with a big-screen showing, trivia rounds, and a best-costume prize." },
+  { "id": "e9", "category": "movies", "art": "a5", "title": "Superhero Movie Trivia Night", "date": "2026-12-12", "location": "Community Hall", "description": "Test your knowledge of Batman, Spider-Man, and more in a team trivia challenge." },
+
+  { "id": "e10", "category": "tv-shows", "art": "a7", "title": "Stranger Things Binge Weekend", "date": "2026-10-11", "location": "Online — Watch Party", "description": "A two-day group rewatch of every season, with a Hawkins-themed quiz between episodes." },
+  { "id": "e11", "category": "tv-shows", "art": "a7", "title": "Stranger Things 80s Night", "date": "2026-11-21", "location": "Retro Arcade Café", "description": "Arcade games, 80s music, and costumes inspired by Hawkins and the Upside Down." },
+  { "id": "e12", "category": "tv-shows", "art": "a8", "title": "Knight Rider Classic Car Meetup", "date": "2026-12-19", "location": "Sea View Parking, Karachi", "description": "Car fans gather to celebrate KITT and classic 80s cars, with a best-ride photo contest." },
+
+  { "id": "e13", "category": "kpop", "art": "a9", "title": "BTS Fan Meetup (ARMY Day)", "date": "2026-10-18", "location": "Dolmen Mall Event Hall", "description": "ARMY gathers for random-play dance, fan-made merch swaps, and a group cheer practice." },
+  { "id": "e14", "category": "kpop", "art": "a10", "title": "K-Pop Random Play Dance", "date": "2026-11-15", "location": "Beach Park Stage", "description": "Jump in when your favourite song plays — BTS, girl groups, and more, all in one dance session." },
+  { "id": "e15", "category": "kpop", "art": "a9", "title": "BTS Music Video Marathon", "date": "2026-12-13", "location": "Online — Community Stream", "description": "A chronological watch-through of BTS music videos with live chat and trivia." },
+
+  { "id": "e16", "category": "comics", "art": "a11", "title": "Spider-Man Comic Art Workshop", "date": "2026-10-25", "location": "Arts Council, Karachi", "description": "Learn to draw dynamic action poses and comic panels inspired by classic Spider-Man art." },
+  { "id": "e17", "category": "comics", "art": "a12", "title": "Marvel Heroes Cosplay Parade", "date": "2026-11-28", "location": "Expo Centre, Hall 3", "description": "Captain America, Iron Man, Hulk, Thor, and friends take the stage in a fan cosplay parade." },
+  { "id": "e18", "category": "comics", "art": "a12", "title": "Comic Book Swap Meet", "date": "2026-12-20", "location": "Local Comic Shop", "description": "Bring your old issues, trade with other fans, and find rare Marvel classics." },
+
+  { "id": "e19", "category": "manga", "art": "a13", "title": "One Piece Manga Reading Club", "date": "2026-10-04", "location": "Liberty Books Café", "description": "A monthly meetup to discuss the latest One Piece chapters and fan theories." },
+  { "id": "e20", "category": "manga", "art": "a14", "title": "Zoro Sword-Pose Photo Contest", "date": "2026-11-08", "location": "Online — Instagram", "description": "Recreate Zoro's famous three-sword pose; the most creative photo wins a manga box set." },
+  { "id": "e21", "category": "manga", "art": "a13", "title": "One Piece Cosplay Meetup", "date": "2026-12-06", "location": "Expo Centre, Karachi", "description": "Straw Hat crew assemble! A meetup, group photo, and best-cosplay prize for One Piece fans." }
+]

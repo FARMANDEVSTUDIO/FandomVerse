@@ -1,0 +1,17 @@
+[
+  { "id": "r1", "category": "manga", "title": "One Piece — New Chapter", "type": "Chapter", "date": "2026-09-30", "platform": "Weekly Shonen Jump + digital" },
+  { "id": "r2", "category": "tv-shows", "title": "Stranger Things — Behind-the-Scenes Special", "type": "Special episode", "date": "2026-10-02", "platform": "Streaming" },
+  { "id": "r3", "category": "anime", "title": "Jujutsu Kaisen — New Season Premiere", "type": "Season premiere", "date": "2026-10-09", "platform": "Streaming" },
+  { "id": "r4", "category": "gaming", "title": "PUBG — New Season Update", "type": "Game update", "date": "2026-10-14", "platform": "PC, console & mobile" },
+  { "id": "r5", "category": "comics", "title": "The Amazing Spider-Man — New Issue", "type": "Issue", "date": "2026-10-21", "platform": "Comic shops + digital" },
+  { "id": "r6", "category": "kpop", "title": "BTS — Anniversary Live Stream", "type": "Live event", "date": "2026-10-23", "platform": "Online" },
+  { "id": "r7", "category": "movies", "title": "The Batman — Re-release in Cinemas", "type": "Film", "date": "2026-10-30", "platform": "Cinemas" },
+  { "id": "r8", "category": "anime", "title": "Dragon Ball Z — Remastered Box Set", "type": "Box set", "date": "2026-11-06", "platform": "Stores + online" },
+  { "id": "r9", "category": "manga", "title": "One Piece — Next Volume", "type": "Volume", "date": "2026-11-13", "platform": "Bookstores + digital" },
+  { "id": "r10", "category": "gaming", "title": "PUBG — New Map Event", "type": "Game event", "date": "2026-11-20", "platform": "PC, console & mobile" },
+  { "id": "r11", "category": "comics", "title": "Marvel Heroes — Collected Edition", "type": "Collected edition", "date": "2026-11-25", "platform": "Comic shops + bookstores" },
+  { "id": "r12", "category": "movies", "title": "Spider-Man: No Way Home — Anniversary Screening", "type": "Film", "date": "2026-12-04", "platform": "Cinemas" },
+  { "id": "r13", "category": "kpop", "title": "BTS — Year-End Stage", "type": "Performance", "date": "2026-12-11", "platform": "TV + streaming" },
+  { "id": "r14", "category": "tv-shows", "title": "Knight Rider — Classic Episodes Marathon", "type": "TV marathon", "date": "2026-12-18", "platform": "TV + streaming" },
+  { "id": "r15", "category": "anime", "title": "Jujutsu Kaisen — Season Finale", "type": "Episode", "date": "2026-12-26", "platform": "Streaming" }
+]

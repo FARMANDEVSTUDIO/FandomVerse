@@ -1,0 +1,24 @@
+{
+  "greeting": "Hi, I'm the FandomVerse guide. Ask me about categories, characters, events, or merchandise, or tap a quick question below.",
+  "fallback": "I don't have an answer for that yet — I'm a simple rule-based guide, not a live AI. Try asking about a category, characters, events, or merchandise.",
+  "disclaimer": "I answer from a fixed set of topics only — I'm not a live AI service.",
+  "quickPrompts": [
+    "What categories do you have?",
+    "Where can I find character profiles?",
+    "Is the merchandise real?",
+    "How does the search work?"
+  ],
+  "intents": [
+    {"keywords": ["categor", "anime", "gaming", "movies", "tv show", "kpop", "k-pop", "comics", "manga"], "response": "FandomVerse covers seven categories: Anime, Gaming, Movies, TV Shows, K-Pop, Comics, and Manga. Open any category page from the navigation to browse its articles, characters, events, and trailers."},
+    {"keywords": ["character", "characters", "profile", "profiles"], "response": "Character profiles live on the Characters page, and you can filter by category. Each profile has a bio, series, and key traits."},
+    {"keywords": ["merch", "merchandise", "shop", "cart", "buy", "purchase"], "response": "The Merchandise page lets you browse items and add them to a cart with a running total — but checkout and real purchases aren't part of this demo. Everything shown is original, fictional fan merchandise."},
+    {"keywords": ["event", "events", "convention", "meetup"], "response": "The Events page lists upcoming fandom events across all seven categories — filter by category to find what's relevant to you."},
+    {"keywords": ["trailer", "trailers", "video", "videos"], "response": "Trailers, interviews, and podcast-style clips are on the Trailers page, filterable by category and content type."},
+    {"keywords": ["article", "articles", "news", "read"], "response": "Featured Articles are on the home page and the Articles page — open any card to read the full piece."},
+    {"keywords": ["search", "find"], "response": "Use the search icon in the navigation bar to search across articles, characters, events, and merchandise from any page."},
+    {"keywords": ["real", "copyright", "licensed", "official"], "response": "Every series, character, and item on FandomVerse is original and fictional, created for this project — nothing here is a real licensed franchise."},
+    {"keywords": ["bookmark", "favorite", "save"], "response": "Tap the bookmark icon on any article or character card to save it — bookmarks are stored in your browser only, using local storage."},
+    {"keywords": ["hello", "hi", "hey"], "response": "Hey there. Ask me about categories, characters, events, or merchandise, or tap a quick question below."},
+    {"keywords": ["thank", "thanks"], "response": "You're welcome. Enjoy exploring the FandomVerse."}
+  ]
+}

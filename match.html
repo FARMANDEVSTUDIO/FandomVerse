@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personality Match — FandomVerse</title>
+<meta name="description" content="Pick any character, describe yourself, and scan how closely your personality matches.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png?v=202609251727">
+<link rel="apple-touch-icon" href="assets/images/logo-180.png?v=202609251727">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css?v=202609251727">
+<link rel="stylesheet" href="css/components.css?v=202609251727">
+<link rel="stylesheet" href="css/responsive.css?v=202609251727">
+<link rel="stylesheet" href="css/glass.css?v=202609251727">
+<script>window.FV_BASE = "";</script>
+<script>(function(){try{var pf=localStorage.getItem("fv_perf")||"auto",lite=pf==="lite";if(pf==="auto"){var g=sessionStorage.getItem("fv_gpu");if(!g){var cv=document.createElement("canvas"),gl=cv.getContext("webgl",{failIfMajorPerformanceCaveat:true});g=gl?"hw":"soft";if(gl){if(/swiftshader|llvmpipe|software|basic render/i.test(String(gl.getParameter(gl.RENDERER)||"")))g="soft";var lc=gl.getExtension("WEBGL_lose_context");lc&&lc.loseContext();}sessionStorage.setItem("fv_gpu",g);}lite=g==="soft"||(navigator.hardwareConcurrency||8)<=2||(navigator.deviceMemory||8)<=2||matchMedia("(pointer:coarse) and (max-width:900px)").matches||matchMedia("(prefers-reduced-motion: reduce)").matches;}if(lite)document.documentElement.classList.add("lite");}catch(e){}try{var x=JSON.parse(localStorage.getItem("fv_a11y")||"{}"),r=document.documentElement;if(x.size)r.style.fontSize=x.size+"%";["contrast","motion","links","spacing"].forEach(function(k){if(x[k])r.classList.add("a11y-"+k)});}catch(e){}try{var t=localStorage.getItem("fv_theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");var a=localStorage.getItem("fv_accent");if(a&&/^#[0-9a-f]{6}$/i.test(a)){var s=document.documentElement.style;s.setProperty("--brand",a);s.setProperty("--cat",a);}}catch(e){}})();</script>
+</head>
+<body data-page="play">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="preloader" id="preloader" aria-hidden="true"><div class="pl-logo"><span class="pl-empty"></span><span class="pl-fill"><i class="pl-wave"></i></span></div></div>
+<script>(function(){
+  // the logo fills with the real loading progress: pictures of this page, then the full page load
+  var p=document.getElementById("preloader");if(!p)return;
+  var f=p.querySelector(".pl-fill"),shown=0,target=6,done=false;
+  function set(v){target=Math.max(target,Math.min(v,100));}
+  function tick(){
+    if(!done&&target<88)target+=(88-target)*0.003;
+    shown+=(target-shown)*0.1;if(target-shown<0.25)shown=target;
+    f.style.height=shown.toFixed(1)+"%";
+    if(done&&shown>=99.9){p.dataset.full=String(performance.now());return;}
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  document.addEventListener("DOMContentLoaded",function(){
+    var imgs=[].slice.call(document.querySelectorAll('img:not([loading="lazy"])')),total=imgs.length+1,n=1;
+    function bump(){n++;set(25+65*n/total);}
+    set(25+65*n/total);
+    imgs.forEach(function(im){if(im.complete)bump();else{im.addEventListener("load",bump,{once:true});im.addEventListener("error",bump,{once:true});}});
+  });
+  window.addEventListener("load",function(){done=true;set(100);});
+  setTimeout(function(){done=true;set(100);},8000);
+})();</script>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand" aria-label="FandomVerse home"><span class="brand-mark"><img src="assets/images/logo.png?v=202609251727" alt="" width="40" height="40"></span><span class="brand-text">FandomVerse</span></a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="articles.html" class="nav-link" data-page="articles">Articles</a>
+      <a href="characters.html" class="nav-link" data-page="characters">Characters</a>
+      <a href="play.html" class="nav-link" data-page="play">Play</a>
+      <a href="events.html" class="nav-link" data-page="events">Events</a>
+      <a href="trailers.html" class="nav-link" data-page="trailers">Media</a>
+      <a href="merchandise.html" class="nav-link" data-page="merchandise">Merch</a>
+      <a href="about.html" class="nav-link" data-page="about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Open search" aria-expanded="false"><span data-icon="search"></span></button>
+      <button class="icon-btn cart-badge" id="cartToggle" aria-label="Open cart"><span data-icon="cart"></span><span class="cart-count hidden" id="cartCount">0</span></button>
+      <button class="btn btn-ghost btn-sm" id="loginBtn" type="button">Log in</button>
+      <button class="btn btn-primary btn-sm" id="signupBtn" type="button">Sign up</button>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" type="button"><svg class="theme-icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="theme-icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="breadcrumb-bar"><div class="breadcrumb-inner"><a href="index.html">Home</a><span class="crumb-sep">/</span><a href="play.html">Play</a><span class="crumb-sep">/</span><span id="crumbCurrent">Personality Match</span></div><div class="live-meta"><span id="liveDate">—</span><span class="dot">·</span><time id="liveClock">--:--:--</time></div></div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true"><nav aria-label="Mobile"><a href="index.html" data-page="home">Home</a><a href="articles.html" data-page="articles">Articles</a><a href="characters.html" data-page="characters">Characters</a><a href="play.html" data-page="play">Play</a><a href="events.html" data-page="events">Events</a><a href="trailers.html" data-page="trailers">Media</a><a href="merchandise.html" data-page="merchandise">Merch</a><a href="about.html" data-page="about">About</a><a href="contact.html" data-page="contact">Contact</a></nav><div class="mobile-drawer-actions"><a class="btn btn-ghost" href="login.html">Log in</a><a class="btn btn-primary" href="signup.html">Sign up</a></div></div>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="search-panel" id="searchPanel" aria-hidden="true"><div class="search-panel-inner"><span data-icon="search"></span><input type="text" id="globalSearch" placeholder="Search articles, characters, events, merch…" autocomplete="off"><button id="searchClose" class="icon-btn" aria-label="Close search">✕</button></div><div class="search-results" id="searchResults"></div></div>
+<div class="cart-backdrop drawer-backdrop" id="cartBackdrop"></div>
+<div class="cart-drawer" id="cartDrawer"><div class="cart-head"><h3>Your cart</h3><button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button></div><div class="cart-items" id="cartItems"></div><div class="cart-foot"><div class="cart-total-row"><span>Total</span><span id="cartTotal">PKR 0</span></div><button class="btn btn-primary" style="width:100%" disabled>Checkout (not included in demo)</button><p class="cart-note">Temporary demo cart only — no real purchase happens.</p></div></div>
+
+<main id="main">
+<section class="xhero">
+  <div class="xhero-inner gx-hero">
+    <div class="xhero-copy">
+      <p class="kicker">Personality Match</p>
+      <h1>How much are you<br>like your character?</h1>
+      <p class="lead">Pick any character, favourite or not. Tell us about yourself, then scan to see how closely your personality matches theirs: very high, high, low or very low.</p>
+    </div>
+    <div class="gx-art gx-match" aria-hidden="true">
+      <span class="gx-ring"></span><span class="gx-ring two"></span>
+      <img class="gx-solo" src="assets/images/characters/full/c2-front.png" alt="">
+      <span class="gx-chip a">Confidence 100%</span><span class="gx-chip b">Humour 92%</span><span class="gx-chip c">You are 87% Gojo!</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner pm">
+    <ol class="pm-steps" aria-label="Steps">
+      <li class="is-on" data-step="1"><span>1</span><em>Pick a character</em></li>
+      <li data-step="2"><span>2</span><em>Your personality</em></li>
+      <li data-step="3"><span>3</span><em>Scan result</em></li>
+    </ol>
+
+    <!-- step 1 -->
+    <div class="pm-panel" id="pmStep1">
+      <div class="pm-toolbar">
+        <input type="search" id="pmSearch" class="pm-search" placeholder="Search a character…" aria-label="Search characters">
+        <div class="pm-filters" id="pmFilters" role="group" aria-label="Filter by fandom"></div>
+      </div>
+      <div class="pm-grid" id="pmGrid"></div>
+    </div>
+
+    <!-- step 2 -->
+    <div class="pm-panel" id="pmStep2" hidden>
+      <div class="pm-chosen" id="pmChosen"></div>
+      <label class="pm-label" for="pmText">Describe yourself in your own words <small>(optional, the scan reads it too)</small></label>
+      <textarea id="pmText" rows="3" placeholder="e.g. I'm calm and loyal to my friends, I love jokes, I plan things before I act…"></textarea>
+      <p class="pm-heard" id="pmHeard" aria-live="polite"></p>
+      <p class="pm-label">How true is each line for you?</p>
+      <div class="pm-qs" id="pmQs"></div>
+      <div class="pm-actions">
+        <button class="btn btn-outline" type="button" id="pmBack">Change character</button>
+        <button class="btn btn-primary" type="button" id="pmScan">Scan my personality</button>
+      </div>
+    </div>
+
+    <!-- step 3 -->
+    <div class="pm-panel" id="pmStep3" hidden>
+      <div class="pm-scan" id="pmScanBox">
+        <div class="pm-scan-img"><img id="pmScanImg" alt=""><span class="pm-scan-line"></span></div>
+        <p id="pmScanText">Scanning…</p>
+      </div>
+      <div class="pm-result" id="pmResult" hidden></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><span class="brand-text" style="font-family:var(--font-display);font-weight:700;font-size:1.15rem;color:var(--ink)">FandomVerse</span><p>Fandom Universe · Web Innovation Unleashed · TechWiz7</p></div>
+    <nav class="footer-col" aria-label="Explore"><h4>Explore</h4><a href="articles.html">Articles</a><a href="characters.html">Characters</a><a href="play.html">Play &amp; games</a><a href="map.html">Universe Map</a><a href="events.html">Events</a><a href="trailers.html">Media</a></nav>
+    <nav class="footer-col" aria-label="Shop"><h4>Shop</h4><a href="merchandise.html">Merchandise</a><a href="bookmarks.html">Bookmarks</a></nav>
+    <nav class="footer-col" aria-label="Categories"><h4>Categories</h4><a href="category.html?cat=anime">Anime</a><a href="category.html?cat=gaming">Gaming</a><a href="category.html?cat=kpop">K-Pop</a><a href="category.html?cat=manga">Manga</a></nav>
+    <nav class="footer-col" aria-label="Site"><h4>Site</h4><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a></nav>
+  </div>
+  <p class="footer-bottom">© <span id="year"></span> FandomVerse — a static, original fan-content demo. Opened <span id="localViews">1</span> time(s) on this device.</p>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<button class="chat-fab" id="chatFab" aria-label="Open guide chat" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9l-4 4v-4H6a2 2 0 0 1-2-2V6z"/><circle cx="9" cy="10.5" r="1" fill="#fff" stroke="none"/><circle cx="12" cy="10.5" r="1" fill="#fff" stroke="none"/><circle cx="15" cy="10.5" r="1" fill="#fff" stroke="none"/></svg></button>
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="FandomVerse guide chat" aria-hidden="true">
+  <div class="chat-head"><div class="chat-head-info"><span class="chat-avatar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></span><div><strong>FandomVerse Guide</strong><small>AI guide · online</small></div></div><button class="icon-btn" id="chatClose" aria-label="Close chat">✕</button></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-quick" id="chatQuick"></div>
+  <form class="chat-input-row" id="chatForm"><input type="text" id="chatInput" placeholder="Ask about categories, characters…" autocomplete="off"><button type="submit" class="btn btn-primary btn-sm">Ask</button></form>
+  <p class="chat-disclaimer">AI guide · answers can sometimes be wrong.</p>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/data.js?v=202609251727"></script>
+<script src="js/assets.js?v=202609251727"></script>
+<script src="js/icons.js?v=202609251727"></script>
+<script src="js/poster.js?v=202609251727"></script>
+<script src="js/animations.js?v=202609251727"></script>
+<script src="js/global.js?v=202609251727"></script>
+<script src="js/auth.js?v=202609251727"></script>
+<script src="js/xp.js?v=202609251727"></script>
+<script src="js/watchlist.js?v=202609251727"></script>
+<script src="js/navigation.js?v=202609251727"></script>
+<script src="js/search.js?v=202609251727"></script>
+<script src="js/bookmarks.js?v=202609251727"></script>
+<script src="js/cart.js?v=202609251727"></script>
+<script src="js/checkout.js?v=202609251727"></script>
+<script src="js/chatbot.js?v=202609251727"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const esc = s => FV.escapeHtml(String(s ?? ""));
+  const data = await FV.data;
+  const cats = data.categories || [];
+  const chars = data.characters || [];
+
+  // eight personality traits, 0 (not at all) .. 10 (totally)
+  const TRAITS = [
+    { k: "brave",  name: "Bravery",      q: "I stand up and fight when things get scary." },
+    { k: "kind",   name: "Kindness",     q: "I care a lot about other people's feelings." },
+    { k: "funny",  name: "Humour",       q: "I joke around and make people laugh." },
+    { k: "smart",  name: "Strategy",     q: "I think and plan before I act." },
+    { k: "calm",   name: "Calmness",     q: "I stay calm under pressure." },
+    { k: "bold",   name: "Confidence",   q: "I believe I can win, whatever happens." },
+    { k: "loyal",  name: "Loyalty",      q: "I never let my friends down." },
+    { k: "wild",   name: "Energy",       q: "I'm loud, full of energy and a bit chaotic." }
+  ];
+  // each character's profile, in TRAITS order
+  const P = {
+    c1:[9,10,7,5,5,6,9,7], c2:[8,5,9,9,7,10,6,8], c3:[7,6,2,8,9,4,8,3], c4:[10,8,7,3,6,9,8,9], c5:[9,3,3,7,3,10,5,8],
+    c6:[9,4,2,7,8,6,4,5], c7:[7,4,2,8,10,6,6,2], c8:[7,10,4,8,7,5,9,3], c9:[8,5,6,5,5,7,7,9], c10:[9,7,4,8,8,9,10,4],
+    c11:[10,6,1,10,9,8,7,3], c14:[9,10,9,8,5,6,9,7], c30:[8,5,9,10,4,10,6,8], c38:[7,2,1,9,9,10,4,4],
+    c16:[9,8,3,5,5,5,10,6], c17:[7,8,5,7,4,6,10,5], c18:[9,7,4,6,5,7,9,5], c19:[9,8,6,6,7,8,8,5], c20:[6,7,7,10,10,8,10,2],
+    c21:[6,8,6,10,7,8,9,4], c22:[6,8,10,5,7,9,8,6], c23:[6,6,6,8,9,7,8,3], c24:[7,9,9,6,5,8,9,9], c25:[6,10,6,6,6,6,9,5],
+    c26:[7,8,8,6,6,7,8,8], c27:[8,8,7,7,6,8,9,7], c28:[9,9,9,7,5,6,8,8], c29:[10,9,3,8,8,8,10,2], c31:[9,5,3,2,1,8,6,10],
+    c32:[10,7,8,4,4,10,8,8], c33:[10,9,9,2,4,10,10,10], c34:[10,5,4,4,9,9,10,4], c36:[9,8,7,6,5,8,9,6]
+  };
+  // words the scan looks for in the text box: +2 / -2 on a trait
+  const WORDS = {
+    brave: [["brave","fearless","fighter","fight","courage","bold","protect","risk","daring","strong"], ["scared","afraid","shy","coward","nervous","timid"]],
+    kind:  [["kind","caring","care","helpful","help","gentle","nice","sweet","soft","friendly","empath"], ["rude","selfish","cold","mean","harsh"]],
+    funny: [["funny","joke","jokes","laugh","humor","humour","silly","playful","fun","prank"], ["serious","boring","strict"]],
+    smart: [["smart","plan","planner","clever","think","logical","genius","intelligent","study","strategy","curious"], ["impulsive","careless","lazy"]],
+    calm:  [["calm","quiet","patient","relaxed","chill","peaceful","cool","introvert"], ["angry","anger","hot-headed","impatient","stressed","panic","short-tempered"]],
+    bold:  [["confident","leader","proud","ambitious","competitive","win","boss"], ["insecure","doubt","unsure","shy","humble"]],
+    loyal: [["loyal","friends","friend","family","honest","trust","trustworthy","faithful","team"], ["alone","lonely","liar","betray"]],
+    wild:  [["energetic","energy","loud","crazy","chaotic","hyper","wild","active","adventure","extrovert","party"], ["calm","quiet","lazy","introvert","tired"]]
+  };
+
+  const params = new URLSearchParams(location.search);
+  let chosen = null, filter = "all";
+  const answers = Object.fromEntries(TRAITS.map(t => [t.k, null]));
+  const touched = new Set();
+  const list = chars.filter(c => P[c.id]);
+  const img = c => `assets/images/characters/${c.id}.jpg`;
+
+  // ---- step 1: character picker
+  const grid = document.getElementById("pmGrid");
+  const filters = document.getElementById("pmFilters");
+  const usedCats = cats.filter(k => list.some(c => c.category === k.id));
+  filters.innerHTML = `<button type="button" class="is-on" data-cat="all">All</button>` +
+    usedCats.map(k => `<button type="button" data-cat="${esc(k.id)}">${esc(k.name)}</button>`).join("");
+  function drawGrid(){
+    const q = document.getElementById("pmSearch").value.trim().toLowerCase();
+    const shown = list.filter(c => (filter === "all" || c.category === filter) && (!q || (c.name + " " + c.series).toLowerCase().includes(q)));
+    grid.innerHTML = shown.map(c => `<button type="button" class="pm-card" data-id="${c.id}">
+        <img src="${img(c)}" alt="" loading="lazy"><span><strong>${esc(c.name)}</strong><small>${esc(c.series)}</small></span></button>`).join("")
+      || `<p class="pm-empty">No character found.</p>`;
+  }
+  filters.addEventListener("click", e => {
+    const b = e.target.closest("button"); if(!b) return;
+    filter = b.dataset.cat;
+    filters.querySelectorAll("button").forEach(x => x.classList.toggle("is-on", x === b));
+    drawGrid();
+  });
+  document.getElementById("pmSearch").addEventListener("input", drawGrid);
+  grid.addEventListener("click", e => { const b = e.target.closest(".pm-card"); if(b) pick(b.dataset.id); });
+  drawGrid();
+
+  function go(step){
+    [1, 2, 3].forEach(n => document.getElementById("pmStep" + n).hidden = n !== step);
+    document.querySelectorAll(".pm-steps li").forEach(li => li.classList.toggle("is-on", +li.dataset.step <= step));
+    document.querySelector(".pm-steps").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  function pick(id){
+    chosen = list.find(c => c.id === id); if(!chosen) return;
+    document.getElementById("pmChosen").innerHTML = `<img src="${img(chosen)}" alt=""><div><p class="kicker">${esc(chosen.series)}</p><h2>${esc(chosen.name)}</h2><p>${esc((chosen.traits || []).join(" · "))}</p></div>`;
+    go(2);
+  }
+
+  // ---- step 2: questions + free text
+  const LEVELS = ["Not me", "A little", "Sometimes", "Mostly", "Totally me"];
+  const qs = document.getElementById("pmQs");
+  qs.innerHTML = TRAITS.map(t => `<div class="pm-q"><p>${esc(t.q)}</p><div class="pm-seg" role="radiogroup" aria-label="${esc(t.q)}" data-k="${t.k}">
+      ${LEVELS.map((l, i) => `<button type="button" role="radio" aria-checked="false" data-v="${i * 2.5}">${l}</button>`).join("")}</div></div>`).join("");
+  qs.addEventListener("click", e => {
+    const b = e.target.closest("button"); if(!b) return;
+    const seg = b.parentElement;
+    seg.querySelectorAll("button").forEach(x => { x.classList.toggle("is-on", x === b); x.setAttribute("aria-checked", x === b); });
+    answers[seg.dataset.k] = +b.dataset.v; touched.add(seg.dataset.k);
+  });
+  // what the text box says about you
+  function readText(){
+    const words = document.getElementById("pmText").value.toLowerCase().match(/[a-z-]+/g) || [];
+    const nudge = {}, found = [];
+    for(const t of TRAITS){
+      const [pos, neg] = WORDS[t.k];
+      let n = 0;
+      words.forEach(w => { if(pos.some(p => w.startsWith(p))) n += 2; if(neg.some(p => w.startsWith(p))) n -= 2; });
+      if(n){ nudge[t.k] = Math.max(-4, Math.min(4, n)); found.push((n > 0 ? "+" : "−") + " " + t.name); }
+    }
+    return { nudge, found };
+  }
+  document.getElementById("pmText").addEventListener("input", () => {
+    const { found } = readText(), heard = document.getElementById("pmHeard");
+    heard.classList.remove("warn");
+    heard.textContent = found.length ? "The scan picked up: " + found.join(", ") : "";
+  });
+  document.getElementById("pmBack").addEventListener("click", () => go(1));
+
+  // ---- step 3: scan + result
+  const clamp = v => Math.max(0, Math.min(10, v));
+  // each trait: the answered line (nudged a little by the text), or the text alone, or null = unknown
+  const you = () => {
+    const { nudge } = readText();
+    return TRAITS.map(t => {
+      const a = answers[t.k], n = nudge[t.k];
+      if(a !== null) return clamp(a + (n ? n / 2 : 0));
+      if(n) return clamp(5 + n * 1.25);
+      return null;
+    });
+  };
+  const near = (x, y) => Math.max(0, Math.abs(x - y) - 1.25);
+  const score = (a, b) => {
+    const idx = a.map((v, i) => v === null ? -1 : i).filter(i => i >= 0);
+    if(!idx.length) return 0;
+    // an answer on the button nearest to the character's value counts as exact (buttons move in steps of 2.5)
+    const diff = idx.reduce((s, i) => s + near(a[i], b[i]), 0) / idx.length;
+    return Math.max(3, Math.min(100, Math.round(100 - diff * 25)));
+  };
+  const band = p => p >= 85 ? ["Very high match", "vh"] : p >= 65 ? ["High match", "hi"] : p >= 45 ? ["Low match", "lo"] : ["Very low match", "vl"];
+
+  document.getElementById("pmScan").addEventListener("click", () => {
+    const me = you(), known = me.filter(v => v !== null).length;
+    const typed = document.getElementById("pmText").value.trim(), heard = document.getElementById("pmHeard");
+    if(known < 4){
+      const msg = typed && !readText().found.length
+        ? "We couldn't read any personality from that text. Use words like brave, funny, calm, kind, loyal, or answer the lines below."
+        : `Tell us a bit more: ${known ? `only ${known} of 8 traits so far, ` : ""}answer at least 4 lines or describe yourself.`;
+      heard.textContent = msg; heard.classList.add("warn");
+      heard.scrollIntoView({ behavior: "smooth", block: "center" });
+      FV.showToast && FV.showToast("Not enough to scan yet.");
+      return;
+    }
+    heard.classList.remove("warn");
+    const them = P[chosen.id], pct = score(me, them);
+    go(3);
+    const box = document.getElementById("pmScanBox"), res = document.getElementById("pmResult");
+    document.getElementById("pmScanImg").src = img(chosen);
+    box.hidden = false; res.hidden = true;
+    const steps = ["Reading your answers…", "Comparing 8 personality traits…", "Matching with " + chosen.name + "…"];
+    const quick = document.documentElement.classList.contains("a11y-motion") || matchMedia("(prefers-reduced-motion: reduce)").matches;
+    steps.forEach((s, i) => setTimeout(() => document.getElementById("pmScanText").textContent = s, quick ? 0 : i * 800));
+    setTimeout(() => { box.hidden = true; showResult(me, them, pct); }, quick ? 300 : 2500);
+  });
+
+  function showResult(me, them, pct){
+    const [label, cls] = band(pct);
+    const gaps = TRAITS.map((t, i) => ({ t, d: me[i] === null ? null : near(me[i], them[i]) })).filter(g => g.d !== null).sort((a, b) => a.d - b.d);
+    const best = list.filter(c => c.id !== chosen.id).map(c => ({ c, p: score(me, P[c.id]) })).sort((a, b) => b.p - a.p)[0];
+    const res = document.getElementById("pmResult");
+    const u = (FV.getUser && FV.getUser()) || null;
+    const youName = u && u.name ? u.name : "You";
+    const avatar = (u && FV.getAvatar && FV.getAvatar()) || "";
+    const youPic = avatar
+      ? `<img class="mr-you mr-pic" src="${esc(avatar)}" alt="">`
+      : `<span class="mr-you">${esc(youName.charAt(0).toUpperCase())}</span>`;
+    const tp = i => me[i] === null ? null : Math.max(0, Math.round(100 - near(me[i], them[i]) * 12));
+    const chip = v => v >= 80 ? "vh" : v >= 60 ? "hi" : v >= 40 ? "lo" : "vl";
+    const kc = cats.find(k => k.id === chosen.category) || {};
+    const catColor = kc.color || "#3b82f6", catColor2 = kc.color2 || catColor;
+    const click = gaps.slice(0, 3), differ = gaps.length > 3 ? gaps.filter(g => g.d > 0).slice(-2).reverse() : [];
+    res.innerHTML = `
+      <div class="mr-hero v5 pm-${cls}" style="--cc:${catColor}">
+        <div class="mr-art">
+          <img class="mr-art-cut" src="assets/images/characters/full/${chosen.id}-front.png" alt="${esc(chosen.name)}"
+            onerror="this.onerror=null;this.className='mr-art-photo';this.src='${img(chosen)}'">
+        </div>
+        <div class="mr-info">
+          <div class="mr-pair">
+            ${avatar ? `<img class="mr-mini" src="${esc(avatar)}" alt="">` : `<span class="mr-mini mr-mini-letter">${esc(youName.charAt(0).toUpperCase())}</span>`}
+            <span class="mr-pair-name">${esc(youName)}</span>
+            <span class="mr-x">×</span>
+            <img class="mr-mini" src="${img(chosen)}" alt="">
+            <span class="mr-pair-name">${esc(chosen.name)}</span>
+          </div>
+          <p class="mr-big"><span id="pmPct">0</span>%</p>
+          <p class="mr-band">${pct === 100 ? "Perfect match" : label}</p>
+          <h2 class="mr-title">You and ${esc(chosen.name)} are ${pct}% alike</h2>
+          <div class="mr-meter" aria-hidden="true">
+            <div class="mr-meter-bar"><i style="left:${pct}%"></i></div>
+            <div class="mr-meter-labels"><span>Very low</span><span>Low</span><span>High</span><span>Very high</span></div>
+          </div>
+          <p class="mr-basis">Based on ${me.filter(v => v !== null).length} of 8 traits${me.filter(v => v !== null).length < 8 ? ". Answer every line for a sharper result." : "."}
+            ${u ? "" : ` <a class="mr-login" href="login.html?next=match.html">Log in to show your own picture.</a>`}</p>
+        </div>
+      </div>
+      <div class="mr-grid">
+        <div class="mr-card">
+          <div class="mr-card-head"><h3>Trait by trait</h3>
+            <p class="mr-scale" aria-hidden="true"><span>Low</span><span>High</span></p>
+            <p class="mr-legend"><span class="dot you"></span>${esc(youName.split(" ")[0])}<span class="dot them"></span>${esc(chosen.name.split(" / ").pop())}</p></div>
+          ${TRAITS.map((t, i) => me[i] === null
+            ? `<div class="mr-trait na"><span class="mr-name">${t.name}</span>
+                <div class="mr-track"><i class="mr-dot them" style="left:${them[i] * 10}%"></i></div><b class="mr-pct na">Not answered</b></div>`
+            : `<div class="mr-trait">
+              <span class="mr-name">${t.name}</span>
+              <div class="mr-track"><i class="mr-gap" style="left:${Math.min(me[i], them[i]) * 10}%;width:${Math.abs(me[i] - them[i]) * 10}%"></i>
+                <i class="mr-dot you" style="left:${me[i] * 10}%"></i><i class="mr-dot them" style="left:${them[i] * 10}%"></i></div>
+              <b class="mr-pct ${chip(tp(i))}">${tp(i)}%</b></div>`).join("")}
+        </div>
+        <div class="mr-aside">
+          <div class="mr-card">
+            <h3>Where you click</h3>
+            <div class="mr-tags">${click.map(g => `<span class="mr-tag good">${g.t.name}<b>${tp(TRAITS.indexOf(g.t))}%</b></span>`).join("")}</div>
+            <h3>Where you differ</h3>
+            <div class="mr-tags">${differ.length ? differ.map(g => `<span class="mr-tag bad">${g.t.name}<b>${tp(TRAITS.indexOf(g.t))}%</b></span>`).join("") : `<span class="mr-none">${gaps.length > 3 ? "Nothing. You think exactly alike." : "Answer more lines to see this."}</span>`}</div>
+          </div>
+          ${best ? `<a class="mr-best" href="character.html?id=${best.c.id}"><img src="${img(best.c)}" alt="">
+            <span><small>Your closest character overall</small><strong>${esc(best.c.name)}</strong><em>${best.p}% match</em></span>${FV.gi("arrow", 18)}</a>` : ""}
+          <div class="mr-actions">
+            <a class="btn btn-primary" href="character.html?id=${chosen.id}">Open ${esc(chosen.name.split(" / ").pop())}</a>
+            <button class="btn btn-outline" type="button" id="pmAgain">Try another character</button>
+            <button class="btn btn-outline" type="button" id="pmEdit">Change my answers</button>
+          </div>
+        </div>
+      </div>`;
+    res.hidden = false;
+    // count the % up
+    const el = document.getElementById("pmPct"), t0 = performance.now();
+    (function tick(t){ const k = Math.min(1, (t - t0) / 900); el.textContent = Math.round(pct * k); if(k < 1) requestAnimationFrame(tick); })(t0);
+    document.getElementById("pmAgain").addEventListener("click", () => go(1));
+    document.getElementById("pmEdit").addEventListener("click", () => go(2));
+    FV.addXP && FV.addXP(10, "match", { pct });
+    try{ localStorage.setItem("fv_last_match", JSON.stringify({ id: chosen.id, pct, at: Date.now() })); }catch(e){}
+  }
+
+  if(params.get("id")) pick(params.get("id"));
+});
+</script>
+</body>
+</html>

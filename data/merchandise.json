@@ -1,0 +1,17 @@
+[
+  {"id":"m1","category":"anime","name":"Jujutsu Kaisen Varsity Jacket","price":3200,"description":"Black varsity jacket inspired by modern supernatural anime streetwear."},
+  {"id":"m2","category":"anime","name":"Dragon Ball Training Tee","price":950,"description":"Graphic training-style tee inspired by classic shonen energy."},
+  {"id":"m3","category":"gaming","name":"PUBG Tactical Hoodie","price":6400,"description":"Tactical-style hoodie inspired by competitive battle-royale gear."},
+  {"id":"m4","category":"gaming","name":"PUBG Tactical Battlefield RGB Desk Mat","price":550,"description":"Extended gaming mat with a tactical battlefield design and RGB-style edge."},
+  {"id":"m5","category":"movies","name":"Retro Cinema Poster Set","price":1800,"description":"Vintage-style movie posters for classic cinema fans."},
+
+  {"id":"m6","category":"movies","name":"Spider-Man Collector Figure","price":2200,"description":"Detailed display figure for superhero collectors."},
+  {"id":"m7","category":"tv-shows","name":"Knight Rider Classic Hoodie","price":1400,"description":"Classic TV-inspired hoodie for retro fans."},
+  {"id":"m8","category":"tv-shows","name":"Stranger Things Hawkins Hoodie","price":2900,"description":"Retro hoodie inspired by the Hawkins era."},
+  {"id":"m9","category":"kpop","name":"BTS Lightstick","price":4500,"description":"Official-style lightstick for K-pop fan collections."},
+  {"id":"m10","category":"kpop","name":"BTS Logo Hoodie","price":3800,"description":"Classic black hoodie featuring the BTS logo."},
+  {"id":"m11","category":"comics","name":"Spider-Man Graphic Hoodie","price":7200,"description":"Superhero graphic hoodie for comic fans."},
+  {"id":"m12","category":"comics","name":"Marvel Character Hoodie","price":850,"description":"Colorful comic-character hoodie for collectors."},
+  {"id":"m13","category":"manga","name":"One Piece Luffy Figure","price":8900,"description":"Collectible figure of Monkey D. Luffy from One Piece."},
+  {"id":"m14","category":"manga","name":"One Piece Zoro Figure","price":1600,"description":"Collectible figure of Roronoa Zoro from One Piece."}
+]

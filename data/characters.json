@@ -1,0 +1,567 @@
+[
+  {
+    "id": "c1",
+    "category": "anime",
+    "name": "Yuji Itadori",
+    "series": "Jujutsu Kaisen",
+    "bio": "A high-schooler with superhuman strength who swallows a cursed finger to save his friends and becomes the host of Sukuna, the King of Curses.",
+    "traits": [
+      "Kind-hearted",
+      "Superhuman strength",
+      "Sukuna's vessel"
+    ],
+    "intro": "Hey! I'm Yuji Itadori. I was just a regular high-schooler with a lot of strength, until I swallowed a cursed finger to save my friends. Now Sukuna, the King of Curses, lives inside me. I'm a Jujutsu sorcerer, and I'll keep fighting so that people get a proper death.",
+    "model": {
+      "front": 0,
+      "color": "#d23b33"
+    }
+  },
+  {
+    "id": "c2",
+    "category": "anime",
+    "name": "Satoru Gojo",
+    "series": "Jujutsu Kaisen",
+    "bio": "The strongest jujutsu sorcerer alive and a teacher at Jujutsu High, known for his blindfold, his confidence, and his Infinity technique.",
+    "traits": [
+      "The strongest",
+      "Teacher",
+      "Six Eyes"
+    ],
+    "intro": "Yo. I'm Satoru Gojo, and yes, I'm the strongest. I teach at Jujutsu High, I have the Six Eyes, and my Infinity means nothing can touch me. Relax, you're in good hands.",
+    "model": {
+      "front": 0,
+      "color": "#7b6cf0"
+    }
+  },
+  {
+    "id": "c3",
+    "category": "anime",
+    "name": "Megumi Fushiguro",
+    "series": "Jujutsu Kaisen",
+    "bio": "A calm, serious first-year sorcerer who fights by summoning shikigami through shadow hand signs.",
+    "traits": [
+      "Shikigami user",
+      "Level-headed",
+      "Loyal friend"
+    ],
+    "intro": "I'm Megumi Fushiguro. I use the Ten Shadows technique to summon shikigami from my shadows, like my Divine Dogs. I don't talk much, but I protect the people I think deserve it.",
+    "model": {
+      "front": 0,
+      "lift": 2,
+      "distance": "125%",
+      "color": "#3d56c9"
+    }
+  },
+  {
+    "id": "c4",
+    "category": "anime",
+    "name": "Goku",
+    "series": "Dragon Ball Z",
+    "bio": "A cheerful Saiyan raised on Earth who lives for training and fighting strong opponents, always pushing past his limits to protect his friends.",
+    "traits": [
+      "Saiyan",
+      "Super Saiyan",
+      "Pure-hearted"
+    ],
+    "intro": "Hi, I'm Goku! I'm a Saiyan raised on Earth, and nothing makes me happier than a good fight and a big meal. I've gone Super Saiyan to protect my friends, and I'm always training to get even stronger!",
+    "voice": {
+      "rate": 1.08,
+      "pitch": 1.15
+    },
+    "model": {
+      "front": 90,
+      "color": "#f07f1c"
+    }
+  },
+  {
+    "id": "c5",
+    "category": "anime",
+    "name": "Vegeta",
+    "series": "Dragon Ball Z",
+    "bio": "The proud prince of the Saiyans who begins as Goku's enemy and becomes his fiercest rival and ally.",
+    "traits": [
+      "Saiyan prince",
+      "Proud",
+      "Eternal rival"
+    ],
+    "intro": "I am Vegeta, Prince of all Saiyans. Remember that name. Kakarot may think he's the best, but my pride and my power will always push me past him. I don't lose.",
+    "voice": {
+      "pitch": 0.85
+    },
+    "model": {
+      "front": 0,
+      "distance": "125%",
+      "lift": 2,
+      "color": "#2f6ae0"
+    }
+  },
+  {
+    "id": "c6",
+    "category": "gaming",
+    "name": "The Lone Survivor",
+    "series": "PUBG: Battlegrounds",
+    "bio": "The solo player who drops alone, stays quiet, and outlasts ninety-nine others by thinking one step ahead.",
+    "traits": [
+      "Solo player",
+      "Patient",
+      "Clutch finisher"
+    ],
+    "intro": "I'm the Lone Survivor. No squad, no backup, just me and the circle. I stay patient, pick my fights, and when it comes down to the final two, I clutch the chicken dinner."
+  },
+  {
+    "id": "c7",
+    "category": "gaming",
+    "name": "The Sniper",
+    "series": "PUBG: Battlegrounds",
+    "bio": "Holds high ground with a scoped rifle, picking off squads before they know where the shots are coming from.",
+    "traits": [
+      "Long range",
+      "Sharp aim",
+      "High ground"
+    ],
+    "intro": "I'm the Sniper. Give me the high ground and an eight-times scope, and you won't even hear the shot. One breath, one bullet, one knock.",
+    "voice": {
+      "rate": 0.92
+    }
+  },
+  {
+    "id": "c8",
+    "category": "gaming",
+    "name": "The Medic",
+    "series": "PUBG: Battlegrounds",
+    "bio": "The squad's lifeline, always carrying first-aid kits and dragging teammates back into the fight.",
+    "traits": [
+      "Support",
+      "Revives",
+      "Team player"
+    ],
+    "intro": "I'm the Medic. While everyone else chases kills, I keep the squad alive. Smoke, revive, boost, and we're back in the fight."
+  },
+  {
+    "id": "c9",
+    "category": "gaming",
+    "name": "The Driver",
+    "series": "PUBG: Battlegrounds",
+    "bio": "Finds a vehicle early and gets the squad to the next safe zone before the circle closes.",
+    "traits": [
+      "Rotations",
+      "Fast",
+      "Map sense"
+    ],
+    "intro": "I'm the Driver. I know every road, every bridge, and every rotation. When the zone closes, get in the car. I'll get us there first.",
+    "voice": {
+      "rate": 1.1
+    }
+  },
+  {
+    "id": "c10",
+    "category": "gaming",
+    "name": "The Squad Leader",
+    "series": "PUBG: Battlegrounds",
+    "bio": "Calls the landing spot, marks enemies, and keeps four players moving as one team.",
+    "traits": [
+      "Shot-caller",
+      "Strategist",
+      "Calm under fire"
+    ],
+    "intro": "I'm the Squad Leader. I make the calls: where we drop, when we push, and when we hold. Stay calm, trust the plan, and we win together."
+  },
+  {
+    "id": "c11",
+    "category": "movies",
+    "name": "Bruce Wayne / Batman",
+    "series": "The Batman",
+    "bio": "In his second year as Batman, a young Bruce Wayne hunts a serial killer through a corrupt Gotham City, learning to be a detective as much as a vigilante.",
+    "traits": [
+      "Detective",
+      "Vigilante",
+      "Brooding"
+    ],
+    "intro": "I am vengeance. By day I'm Bruce Wayne, but at night, Gotham knows me as Batman. I'm a detective first. I watch, I learn, and I make the criminals of this city afraid of the dark.",
+    "voice": {
+      "pitch": 0.75,
+      "rate": 0.9
+    },
+    "model": {
+      "front": 0,
+      "color": "#c9a227"
+    }
+  },
+  {
+    "id": "c14",
+    "category": "movies",
+    "name": "Peter Parker / Spider-Man",
+    "series": "Spider-Man: No Way Home",
+    "bio": "After the world learns his secret identity, Peter asks for help to make everyone forget — and accidentally opens the door to the multiverse.",
+    "traits": [
+      "Web-slinger",
+      "Responsible",
+      "Big heart"
+    ],
+    "intro": "Hey, I'm Peter Parker, your friendly neighbourhood Spider-Man! I swing around New York, I crack a lot of jokes, and I try to live by one rule: with great power comes great responsibility.",
+    "voice": {
+      "rate": 1.1,
+      "pitch": 1.1
+    },
+    "model": {
+      "front": 0,
+      "color": "#d62a2a",
+      "lift": 4
+    }
+  },
+  {
+    "id": "c30",
+    "category": "movies",
+    "name": "Iron Man",
+    "series": "Avengers: Endgame",
+    "bio": "Tony Stark, the genius billionaire who built his first suit in a cave and ends the Infinity War wearing the nanotech Mark 85.",
+    "traits": [
+      "Genius",
+      "Mark 85 armor",
+      "Avenger"
+    ],
+    "intro": "I'm Tony Stark. Genius, billionaire, and I built the Iron Man armour in a cave with a box of scraps. I am Iron Man.",
+    "voice": {
+      "rate": 1.05
+    },
+    "suitLabel": "Armor",
+    "color3d": "#d8352a",
+    "models": [
+      {
+        "label": "Mark 85",
+        "file": "c30.glb",
+        "front": 0,
+        "lift": 4
+      },
+      {
+        "label": "Classic",
+        "file": "c30-classic.glb",
+        "front": 0,
+        "lift": 4
+      }
+    ]
+  },
+  {
+    "id": "c38",
+    "category": "movies",
+    "name": "Thanos",
+    "series": "Avengers: Endgame",
+    "bio": "The Mad Titan from Titan, who hunts the six Infinity Stones to reshape the universe in his own grim vision of balance.",
+    "traits": [
+      "Mad Titan",
+      "Infinity Gauntlet",
+      "Villain"
+    ],
+    "intro": "I am Thanos, the Mad Titan. I have seen worlds die because they grew beyond what they could hold. With the six Infinity Stones, a single snap restores balance. Dread it. Run from it. Destiny arrives all the same.",
+    "voice": {
+      "pitch": 0.55,
+      "rate": 0.86
+    },
+    "model": {
+      "front": 0,
+      "color": "#7a4fc9"
+    }
+  },
+  {
+    "id": "c16",
+    "category": "tv-shows",
+    "name": "Eleven",
+    "series": "Stranger Things",
+    "bio": "A girl with psychokinetic powers who escapes a secret lab and finds a family in the kids of Hawkins.",
+    "traits": [
+      "Telekinesis",
+      "Brave",
+      "Loyal"
+    ],
+    "intro": "I'm Eleven. Friends don't lie. I grew up in Hawkins Lab, and I can move things with my mind. I fight the monsters from the Upside Down to protect my friends.",
+    "voice": {
+      "female": true,
+      "pitch": 1.2
+    }
+  },
+  {
+    "id": "c17",
+    "category": "tv-shows",
+    "name": "Mike Wheeler",
+    "series": "Stranger Things",
+    "bio": "The determined leader of the friend group who never stops searching when someone he cares about goes missing.",
+    "traits": [
+      "Leader",
+      "Loyal friend",
+      "Determined"
+    ],
+    "intro": "I'm Mike Wheeler from Hawkins, Indiana. I love Dungeons and Dragons, and I never give up on my friends. When things get weird in Hawkins, our party sticks together.",
+    "voice": {
+      "pitch": 1.15
+    }
+  },
+  {
+    "id": "c18",
+    "category": "tv-shows",
+    "name": "Jim Hopper",
+    "series": "Stranger Things",
+    "bio": "Hawkins' gruff police chief who becomes Eleven's protector and adoptive father.",
+    "traits": [
+      "Police chief",
+      "Protective",
+      "Tough"
+    ],
+    "intro": "I'm Jim Hopper, chief of police in Hawkins. I've seen things I can't explain, but one thing's simple: I protect my kid and my town. Mornings are for coffee and contemplation.",
+    "voice": {
+      "pitch": 0.8,
+      "rate": 0.92
+    }
+  },
+  {
+    "id": "c19",
+    "category": "tv-shows",
+    "name": "Michael Knight",
+    "series": "Knight Rider",
+    "bio": "A former detective given a new identity who fights crime alongside an intelligent, nearly indestructible car.",
+    "traits": [
+      "Crime fighter",
+      "Charming",
+      "Driver"
+    ],
+    "intro": "I'm Michael Knight. One man can make a difference, and with my partner KITT, we take down criminals who think they're above the law."
+  },
+  {
+    "id": "c20",
+    "category": "tv-shows",
+    "name": "KITT",
+    "series": "Knight Rider",
+    "bio": "The talking, artificially intelligent car with a red scanner light who is Michael's partner, protector, and voice of reason.",
+    "traits": [
+      "AI car",
+      "Witty",
+      "Indestructible"
+    ],
+    "intro": "Good evening. I am the Knight Industries Two Thousand. You may call me KITT. I am an artificially intelligent car with a molecular bonded shell, turbo boost, and considerably better manners than most drivers.",
+    "voice": {
+      "pitch": 0.6,
+      "rate": 0.9
+    }
+  },
+  {
+    "id": "c21",
+    "category": "kpop",
+    "name": "RM",
+    "series": "BTS",
+    "bio": "BTS's leader and main rapper, known for his thoughtful lyrics and for speaking for the group on global stages.",
+    "traits": [
+      "Leader",
+      "Rapper",
+      "Songwriter"
+    ],
+    "intro": "Meet RM of BTS. BTS's leader and main rapper, known for his thoughtful lyrics and for speaking for the group on global stages. Fans know RM for being: leader, rapper, songwriter.",
+    "voice": {
+      "narrator": true
+    }
+  },
+  {
+    "id": "c22",
+    "category": "kpop",
+    "name": "Jin",
+    "series": "BTS",
+    "bio": "The eldest member and a vocalist, loved for his warm voice and his playful sense of humour.",
+    "traits": [
+      "Vocalist",
+      "Eldest",
+      "Funny"
+    ],
+    "intro": "Meet Jin of BTS. The eldest member and a vocalist, loved for his warm voice and his playful sense of humour. Fans know Jin for being: vocalist, eldest, funny.",
+    "voice": {
+      "narrator": true
+    }
+  },
+  {
+    "id": "c23",
+    "category": "kpop",
+    "name": "SUGA",
+    "series": "BTS",
+    "bio": "A rapper and producer who also releases music under the name Agust D.",
+    "traits": [
+      "Rapper",
+      "Producer",
+      "Honest"
+    ],
+    "intro": "Meet SUGA of BTS. A rapper and producer who also releases music under the name Agust D. Fans know SUGA for being: rapper, producer, honest.",
+    "voice": {
+      "narrator": true
+    }
+  },
+  {
+    "id": "c24",
+    "category": "kpop",
+    "name": "j-hope",
+    "series": "BTS",
+    "bio": "A rapper and main dancer whose bright energy lifts every performance.",
+    "traits": [
+      "Dancer",
+      "Rapper",
+      "Sunshine"
+    ],
+    "intro": "Meet j-hope of BTS. A rapper and main dancer whose bright energy lifts every performance. Fans know j-hope for being: dancer, rapper, sunshine.",
+    "voice": {
+      "narrator": true
+    }
+  },
+  {
+    "id": "c25",
+    "category": "kpop",
+    "name": "Jimin",
+    "series": "BTS",
+    "bio": "A vocalist and dancer known for graceful, expressive performances.",
+    "traits": [
+      "Vocalist",
+      "Dancer",
+      "Graceful"
+    ],
+    "intro": "Meet Jimin of BTS. A vocalist and dancer known for graceful, expressive performances. Fans know Jimin for being: vocalist, dancer, graceful.",
+    "voice": {
+      "narrator": true
+    }
+  },
+  {
+    "id": "c26",
+    "category": "kpop",
+    "name": "V",
+    "series": "BTS",
+    "bio": "A vocalist with a deep, distinctive voice and an artistic, creative style.",
+    "traits": [
+      "Vocalist",
+      "Deep voice",
+      "Artistic"
+    ],
+    "intro": "Meet V of BTS. A vocalist with a deep, distinctive voice and an artistic, creative style. Fans know V for being: vocalist, deep voice, artistic.",
+    "voice": {
+      "narrator": true
+    }
+  },
+  {
+    "id": "c27",
+    "category": "kpop",
+    "name": "Jung Kook",
+    "series": "BTS",
+    "bio": "The youngest member, a vocalist and performer often called the group's all-rounder.",
+    "traits": [
+      "Vocalist",
+      "Maknae",
+      "All-rounder"
+    ],
+    "intro": "Meet Jung Kook of BTS. The youngest member, a vocalist and performer often called the group's all-rounder. Fans know Jung Kook for being: vocalist, maknae, all-rounder.",
+    "voice": {
+      "narrator": true
+    }
+  },
+  {
+    "id": "c28",
+    "category": "comics",
+    "name": "Spider-Man",
+    "series": "The Amazing Spider-Man",
+    "bio": "Bitten by a radioactive spider, Peter Parker balances everyday life with protecting New York, guided by 'with great power comes great responsibility'.",
+    "traits": [
+      "Wall-crawler",
+      "Spider-sense",
+      "Witty"
+    ],
+    "intro": "Hi! I'm Spider-Man. I got bitten by a radioactive spider, and now I stick to walls and my spider-sense tingles when danger's near. Don't worry, I've got this. Probably.",
+    "voice": {
+      "rate": 1.1,
+      "pitch": 1.1
+    }
+  },
+  {
+    "id": "c29",
+    "category": "comics",
+    "name": "Captain America",
+    "series": "Marvel Comics",
+    "bio": "Steve Rogers, a super-soldier from World War II, who fights for freedom with his unbreakable shield.",
+    "traits": [
+      "Super-soldier",
+      "Leader",
+      "Shield"
+    ],
+    "intro": "I'm Steve Rogers, Captain America. A super-soldier serum made me strong, but my shield and my values keep me standing. I can do this all day."
+  },
+  {
+    "id": "c31",
+    "category": "comics",
+    "name": "Hulk",
+    "series": "Marvel Comics",
+    "bio": "Scientist Bruce Banner, who transforms into a giant green powerhouse when angered.",
+    "traits": [
+      "Super strength",
+      "Scientist",
+      "Rage"
+    ],
+    "intro": "I'm Bruce Banner, a scientist. But when I get angry, I become the Hulk. HULK SMASH! Sorry. That's my secret: I'm always angry.",
+    "voice": {
+      "pitch": 0.55,
+      "rate": 0.88
+    }
+  },
+  {
+    "id": "c32",
+    "category": "comics",
+    "name": "Thor",
+    "series": "Marvel Comics",
+    "bio": "The Asgardian God of Thunder who wields the enchanted hammer Mjolnir.",
+    "traits": [
+      "God of Thunder",
+      "Mjolnir",
+      "Warrior"
+    ],
+    "intro": "I am Thor, son of Odin, God of Thunder! With Mjolnir in hand, I defend Asgard and the Nine Realms. Bring me your strongest foe!",
+    "voice": {
+      "pitch": 0.8
+    }
+  },
+  {
+    "id": "c33",
+    "category": "manga",
+    "name": "Monkey D. Luffy",
+    "series": "One Piece",
+    "bio": "A rubber-bodied pirate captain chasing the legendary One Piece treasure and his dream of becoming King of the Pirates.",
+    "traits": [
+      "Captain",
+      "Rubber body",
+      "Never gives up"
+    ],
+    "intro": "I'm Monkey D. Luffy, and I'm gonna be King of the Pirates! I ate the Gum-Gum Fruit, so my body is made of rubber. My crew is my family, and I never, ever give up!",
+    "voice": {
+      "rate": 1.12,
+      "pitch": 1.2
+    }
+  },
+  {
+    "id": "c34",
+    "category": "manga",
+    "name": "Roronoa Zoro",
+    "series": "One Piece",
+    "bio": "A three-sword swordsman who wants to become the world's greatest — and who is famously bad at directions.",
+    "traits": [
+      "Swordsman",
+      "Three swords",
+      "Loyal"
+    ],
+    "intro": "I'm Roronoa Zoro, swordsman of the Straw Hat Pirates. I fight with three swords, and I'll become the world's greatest swordsman. And no, I'm not lost.",
+    "voice": {
+      "pitch": 0.8,
+      "rate": 0.92
+    }
+  },
+  {
+    "id": "c36",
+    "category": "manga",
+    "name": "Sanji",
+    "series": "One Piece",
+    "bio": "The crew's cook, who fights using only his legs to protect his hands for cooking.",
+    "traits": [
+      "Cook",
+      "Kick fighter",
+      "Gentleman"
+    ],
+    "intro": "I'm Sanji, cook of the Straw Hat Pirates. I fight only with my legs, because my hands are for cooking. Nobody goes hungry on my ship."
+  }
+]

@@ -1,0 +1,9 @@
+[
+  { "id": "anime", "name": "Anime", "tagline": "Worlds beyond the screen", "color": "#ff3d71", "color2": "#ff8a5c" },
+  { "id": "gaming", "name": "Gaming", "tagline": "Play beyond limits", "color": "#7c3aed", "color2": "#4f46e5" },
+  { "id": "movies", "name": "Movies", "tagline": "The big screen, distilled", "color": "#f5a623", "color2": "#ef4444" },
+  { "id": "tv-shows", "name": "TV Shows", "tagline": "Binge-worthy universes", "color": "#00b8d9", "color2": "#2563eb" },
+  { "id": "kpop", "name": "K-Pop", "tagline": "The idol economy", "color": "#ff2d95", "color2": "#a855f7" },
+  { "id": "comics", "name": "Comics", "tagline": "Panels of legend", "color": "#ff6b35", "color2": "#facc15" },
+  { "id": "manga", "name": "Manga", "tagline": "Ink and arcs", "color": "#5b5bd6", "color2": "#0ea5e9" }
+]
