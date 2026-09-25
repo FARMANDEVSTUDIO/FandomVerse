@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const eventList = document.getElementById("eventHighlights");
   if(eventList){
-    const picks = [...(data.events || [])].sort((a,b) => new Date(a.date)-new Date(b.date)).slice(0, 3);
+    const picks = FV.upcomingFirst(data.events || []).slice(0, 3);
     eventList.innerHTML = picks.map(e => FV.renderEventRow(e, catMap)).join("");
   }
 

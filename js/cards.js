@@ -46,6 +46,20 @@ FV.renderCharacterCard = function renderCharacterCard(c, catMap){
     </div>`;
 };
 
+// "Upcoming · in 12 days", "Today" or "Past", measured from the local date
+FV.eventStatus = function eventStatus(date){
+  const [y, m, dd] = String(date).split("-").map(Number);
+  const t = new Date(); t.setHours(0, 0, 0, 0);
+  const n = Math.round((new Date(y, m - 1, dd) - t) / 864e5);
+  const [cls, txt] = n > 0 ? ["up", n === 1 ? "Tomorrow" : `Upcoming · in ${n} days`] : n === 0 ? ["now", "Today"] : ["past", "Past event"];
+  return ` <span class="event-status ${cls}">${txt}</span>`;
+};
+FV.upcomingFirst = function upcomingFirst(list){
+  const t = new Date(); t.setHours(0, 0, 0, 0);
+  const iso = `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`;
+  const up = list.filter(e => e.date >= iso).sort((a, b) => a.date.localeCompare(b.date));
+  return up.length ? up : list.slice().sort((a, b) => b.date.localeCompare(a.date));
+};
 FV.renderEventRow = function renderEventRow(e, catMap){
   const c = catMap[e.category];
   const d = new Date(e.date);
@@ -57,7 +71,7 @@ FV.renderEventRow = function renderEventRow(e, catMap){
           <strong>${d.getDate()}</strong><span>${d.toLocaleDateString([], {month:"short"})}</span>
         </div>
         <div class="event-main">
-          <div class="event-date">${d.toLocaleDateString([], {month:"long", day:"numeric", year:"numeric"})} · ${c.name}</div>
+          <div class="event-date">${d.toLocaleDateString([], {month:"long", day:"numeric", year:"numeric"})} · ${c.name}${FV.eventStatus(e.date)}</div>
           <h3>${FV.escapeHtml(e.title)}</h3>
           <div class="event-loc"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>${FV.escapeHtml(e.location)}</div>
           <p>${FV.escapeHtml(e.description)}</p>

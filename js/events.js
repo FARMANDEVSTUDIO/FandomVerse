@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const filters = document.getElementById("eventFilters");
 
   function render(filter = "all"){
-    const items = [...(data.events||[])]
-      .filter(e => filter === "all" || e.category === filter)
-      .sort((a,b) => new Date(a.date) - new Date(b.date));
+    const mine = (data.events||[]).filter(e => filter === "all" || e.category === filter);
+    const up = FV.upcomingFirst(mine), upIds = new Set(up.map(e => e.id));
+    const items = up.concat(mine.filter(e => !upIds.has(e.id)).sort((a, b) => b.date.localeCompare(a.date)));
     root.innerHTML = items.map(e => FV.renderEventRow(e, catMap)).join("") || `<p class="search-empty">No events in this category.</p>`;
     FV.markReveal && FV.markReveal(); FV.initReveal && FV.initReveal();
   }

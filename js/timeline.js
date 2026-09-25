@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const catMap = Object.fromEntries((data.categories || []).map(c => [c.id, c]));
 
   // earliest events, one per category where possible
-  const sorted = [...(data.events || [])].sort((a, b) => new Date(a.date) - new Date(b.date));
+  const sorted = FV.upcomingFirst(data.events || []);
   const seen = new Set();
   let picks = sorted.filter(e => !seen.has(e.category) && seen.add(e.category));
   if(picks.length < 7) picks = picks.concat(sorted.filter(e => !picks.includes(e))).slice(0, 7);
