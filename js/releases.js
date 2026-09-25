@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if(/chapter|issue|volume|edition/.test(t)) return "book";
     if(/episode|season|marathon|premiere/.test(t)) return "tv";
     if(/game/.test(t)) return "game";
+    if(/album|single/.test(t)) return "stage";
     if(/live|performance|concert/.test(t)) return "stage";
     if(/box/.test(t)) return "box";
     return "cal";
