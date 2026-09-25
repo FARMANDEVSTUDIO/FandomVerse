@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     legend.addEventListener("click", e => {
       const b = e.target.closest(".rel-chip"); if(!b) return;
       filter = b.dataset.cat; selected = null;
+      // jump to the month of this fandom's next release (or its latest one)
+      const list = shown(), next = list.find(r => r.when >= today) || list[list.length - 1];
+      if(next) view = new Date(next.when.getFullYear(), next.when.getMonth(), 1);
       legend.querySelectorAll(".rel-chip").forEach(x => x.classList.toggle("on", x === b));
       renderMonth(); renderList();
     });

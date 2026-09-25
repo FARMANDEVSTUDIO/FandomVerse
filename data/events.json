@@ -7,7 +7,7 @@
   "date": "2025-12-31",
   "location": "Cinemas in the US and Canada",
   "description": "The last episode of Stranger Things was shown in cinemas on New Year's Eve, the same night it streamed on Netflix.",
-  "img": "assets/images/events/e1.jpg"
+  "img": "assets/images/events/e1.jpg?v=202609260003"
  },
  {
   "id": "e2",
@@ -17,7 +17,7 @@
   "date": "2026-04-09",
   "location": "Goyang Stadium, South Korea",
   "description": "BTS opened their ARIRANG world tour at home in Goyang, their first stadium tour as a full group since their military service.",
-  "img": "assets/images/events/e2.jpg"
+  "img": "assets/images/events/e2.jpg?v=202609260003"
  },
  {
   "id": "e3",
@@ -27,7 +27,7 @@
   "date": "2026-07-02",
   "location": "Los Angeles Convention Center, USA",
   "description": "North America's biggest anime convention: studio panels, premieres, cosplay and concerts over four days (2–5 July).",
-  "img": "assets/images/events/e3.jpg"
+  "img": "assets/images/events/e3.jpg?v=202609260003"
  },
  {
   "id": "e4",
@@ -37,7 +37,7 @@
   "date": "2026-07-23",
   "location": "San Diego Convention Center, USA",
   "description": "The world's best-known comic convention, with Marvel, DC and studio panels, trailers and cosplay (23–26 July).",
-  "img": "assets/images/events/e4.jpg"
+  "img": "assets/images/events/e4.jpg?v=202609260003"
  },
  {
   "id": "e5",
@@ -47,7 +47,7 @@
   "date": "2026-07-31",
   "location": "Cinemas worldwide",
   "description": "Tom Holland returns as Peter Parker in the fourth MCU Spider-Man film.",
-  "img": "assets/images/events/e5.jpg"
+  "img": "assets/images/events/e5.jpg?v=202609260003"
  },
  {
   "id": "e6",
@@ -57,7 +57,7 @@
   "date": "2026-08-26",
   "location": "Koelnmesse, Cologne, Germany",
   "description": "Europe's biggest video game fair: new game reveals, playable demos and the Opening Night Live show (26–30 August).",
-  "img": "assets/images/events/e6.jpg"
+  "img": "assets/images/events/e6.jpg?v=202609260003"
  },
  {
   "id": "e7",
@@ -67,7 +67,7 @@
   "date": "2026-10-08",
   "location": "Javits Center, New York, USA",
   "description": "The East Coast's biggest pop-culture convention for comics, anime, games and TV (8–11 October).",
-  "img": "assets/images/events/e7.jpg"
+  "img": "assets/images/events/e7.jpg?v=202609260003"
  },
  {
   "id": "e8",
@@ -77,7 +77,7 @@
   "date": "2026-11-19",
   "location": "PS5 and Xbox Series X|S",
   "description": "Rockstar's long-awaited next GTA, set in Leonida (its version of Florida), comes out worldwide.",
-  "img": "assets/images/events/e8.jpg"
+  "img": "assets/images/events/e8.jpg?v=202609260003"
  },
  {
   "id": "e9",
@@ -87,7 +87,7 @@
   "date": "2026-12-18",
   "location": "Cinemas worldwide",
   "description": "Robert Downey Jr. returns to the MCU as Doctor Doom in the next big Avengers film.",
-  "img": "assets/images/events/e9.jpg"
+  "img": "assets/images/events/e9.jpg?v=202609260003"
  },
  {
   "id": "e10",
@@ -97,6 +97,6 @@
   "date": "2026-12-19",
   "location": "Makuhari Messe, Chiba, Japan",
   "description": "Shueisha's yearly Shonen Jump festival, where One Piece, Jujutsu Kaisen and other series share news and new anime reveals (19–20 December).",
-  "img": "assets/images/events/e10.jpg"
+  "img": "assets/images/events/e10.jpg?v=202609260003"
  }
 ]

@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Accessibility — FandomVerse</title>
 <meta name="description" content="Accessibility settings (text size, contrast, motion, links, spacing) and how FandomVerse is built for everyone.">
-<link rel="icon" type="image/png" href="assets/images/favicon.png?v=202609252354">
-<link rel="apple-touch-icon" href="assets/images/logo-180.png?v=202609252354">
+<link rel="icon" type="image/png" href="assets/images/favicon.png?v=202609260003">
+<link rel="apple-touch-icon" href="assets/images/logo-180.png?v=202609260003">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/global.css?v=202609252354">
-<link rel="stylesheet" href="css/components.css?v=202609252354">
-<link rel="stylesheet" href="css/responsive.css?v=202609252354">
-<link rel="stylesheet" href="css/glass.css?v=202609252354">
+<link rel="stylesheet" href="css/global.css?v=202609260003">
+<link rel="stylesheet" href="css/components.css?v=202609260003">
+<link rel="stylesheet" href="css/responsive.css?v=202609260003">
+<link rel="stylesheet" href="css/glass.css?v=202609260003">
 <script>window.FV_BASE = "";</script>
 <script>(function(){try{var pf=localStorage.getItem("fv_perf")||"auto",lite=pf==="lite";if(pf==="auto"){var g=sessionStorage.getItem("fv_gpu");if(!g){var cv=document.createElement("canvas"),gl=cv.getContext("webgl",{failIfMajorPerformanceCaveat:true});g=gl?"hw":"soft";if(gl){if(/swiftshader|llvmpipe|software|basic render/i.test(String(gl.getParameter(gl.RENDERER)||"")))g="soft";var lc=gl.getExtension("WEBGL_lose_context");lc&&lc.loseContext();}sessionStorage.setItem("fv_gpu",g);}lite=g==="soft"||(navigator.hardwareConcurrency||8)<=2||(navigator.deviceMemory||8)<=2||matchMedia("(pointer:coarse) and (max-width:900px)").matches||matchMedia("(prefers-reduced-motion: reduce)").matches;}if(lite)document.documentElement.classList.add("lite");}catch(e){}try{var x=JSON.parse(localStorage.getItem("fv_a11y")||"{}"),r=document.documentElement;if(x.size)r.style.fontSize=x.size+"%";["contrast","motion","links","spacing"].forEach(function(k){if(x[k])r.classList.add("a11y-"+k)});}catch(e){}try{var t=localStorage.getItem("fv_theme");if(t==="light")document.documentElement.setAttribute("data-theme","light");var a=localStorage.getItem("fv_accent");if(a&&/^#[0-9a-f]{6}$/i.test(a)){var s=document.documentElement.style;s.setProperty("--brand",a);s.setProperty("--cat",a);}}catch(e){}})();</script>
 </head>
@@ -46,7 +46,7 @@
 
 <header class="site-header" id="siteHeader">
   <div class="nav-wrap">
-    <a href="index.html" class="brand" aria-label="FandomVerse home"><span class="brand-mark"><img src="assets/images/logo.png?v=202609252354" alt="" width="40" height="40"></span><span class="brand-text">FandomVerse</span></a>
+    <a href="index.html" class="brand" aria-label="FandomVerse home"><span class="brand-mark"><img src="assets/images/logo.png?v=202609260003" alt="" width="40" height="40"></span><span class="brand-text">FandomVerse</span></a>
     <nav class="main-nav" id="mainNav" aria-label="Primary">
       <a href="index.html" class="nav-link" data-page="home">Home</a>
       <a href="articles.html" class="nav-link" data-page="articles">Articles</a>
@@ -178,21 +178,21 @@
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-<script src="js/data.js?v=202609252354"></script>
-<script src="js/assets.js?v=202609252354"></script>
-<script src="js/icons.js?v=202609252354"></script>
-<script src="js/poster.js?v=202609252354"></script>
-<script src="js/animations.js?v=202609252354"></script>
-<script src="js/global.js?v=202609252354"></script>
-<script src="js/auth.js?v=202609252354"></script>
-<script src="js/xp.js?v=202609252354"></script>
-<script src="js/watchlist.js?v=202609252354"></script>
-<script src="js/navigation.js?v=202609252354"></script>
-<script src="js/search.js?v=202609252354"></script>
-<script src="js/bookmarks.js?v=202609252354"></script>
-<script src="js/cart.js?v=202609252354"></script>
-<script src="js/checkout.js?v=202609252354"></script>
-<script src="js/chatbot.js?v=202609252354"></script>
+<script src="js/data.js?v=202609260003"></script>
+<script src="js/assets.js?v=202609260003"></script>
+<script src="js/icons.js?v=202609260003"></script>
+<script src="js/poster.js?v=202609260003"></script>
+<script src="js/animations.js?v=202609260003"></script>
+<script src="js/global.js?v=202609260003"></script>
+<script src="js/auth.js?v=202609260003"></script>
+<script src="js/xp.js?v=202609260003"></script>
+<script src="js/watchlist.js?v=202609260003"></script>
+<script src="js/navigation.js?v=202609260003"></script>
+<script src="js/search.js?v=202609260003"></script>
+<script src="js/bookmarks.js?v=202609260003"></script>
+<script src="js/cart.js?v=202609260003"></script>
+<script src="js/checkout.js?v=202609260003"></script>
+<script src="js/chatbot.js?v=202609260003"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const panel = document.getElementById("a11yPanel");
