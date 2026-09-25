@@ -115,15 +115,15 @@ window.FV = window.FV || {};
     if(!document.getElementById("xpCard")) return;
     const s = FV.xpState(), L = FV.xpLevel(s.xp);
     const set = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
-    set("xpLvl", L.lvl); set("xpTitle", L.title); set("xpNow", s.xp.toLocaleString());
-    set("xpNext", `${L.need - L.into} XP to level ${L.lvl + 1}`);
+    set("xpLvl", L.lvl); set("xpTitle", L.title); set("xpNow", L.into.toLocaleString()); set("xpGoal", L.need.toLocaleString());
+    set("xpNext", `${(L.need - L.into).toLocaleString()} XP to level ${L.lvl + 1} · ${s.xp.toLocaleString()} XP in total`);
     document.getElementById("xpFill").style.width = Math.round(L.into / L.need * 100) + "%";
-    const stats = [["Characters", s.chars.length], ["Articles", s.articles.length], ["Battles won", s.counts.battleWin || 0], ["Best match", (s.best || 0) + "%"]];
-    document.getElementById("xpStats").innerHTML = stats.map(([k, v]) => `<div><strong>${v}</strong><span>${k}</span></div>`).join("");
-    set("xpBadgeCount", `${s.badges.length} / ${FV.BADGES.length}`);
+    const stats = [["Characters seen", s.chars.length], ["Articles read", s.articles.length], ["Battles won", s.counts.battleWin || 0], ["Best match", (s.best || 0) + "%"]];
+    document.getElementById("xpStats").innerHTML = stats.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+    set("xpBadgeCount", `${s.badges.length} of ${FV.BADGES.length} unlocked`);
     document.getElementById("xpBadges").innerHTML = FV.BADGES.map(b => {
       const on = s.badges.includes(b.id);
-      return `<div class="xp-badge ${on ? "on" : ""}" title="${b.desc}"><span>${FV.gi(on ? b.icon : "lock", 22)}</span><strong>${b.name}</strong><small>${on ? "Unlocked" : b.desc}</small></div>`;
+      return `<li class="xp-badge ${on ? "on" : ""}">${FV.gi(on ? b.icon : "lock", 16)}<span><strong>${b.name}</strong><small>${b.desc}</small></span></li>`;
     }).join("");
   }
   // release reminders set on the Events page: tell the fan the day before and on the day (once per day)

@@ -2778,10 +2778,10 @@ section:has(> .section-inner > .play-grid){ padding-bottom: 1rem; }
 /* Logo + liquid loader */
 .brand-mark{ width: 42px; height: 42px; background: none !important; border-radius: 0; box-shadow: none !important; }
 .brand-mark img{ width: 100%; height: 100%; display: block; object-fit: contain; }
-html[data-theme="light"] .brand-mark img{ content: url(../assets/images/logo-ink.png?v=202609251727); }
-.pl-logo{ --pl: url(../assets/images/logo.png?v=202609251727); position: relative; width: 132px; height: 132px;
+html[data-theme="light"] .brand-mark img{ content: url(../assets/images/logo-ink.png?v=202609251738); }
+.pl-logo{ --pl: url(../assets/images/logo.png?v=202609251738); position: relative; width: 132px; height: 132px;
   -webkit-mask: var(--pl) center / contain no-repeat; mask: var(--pl) center / contain no-repeat; }
-html[data-theme="light"] .pl-logo{ --pl: url(../assets/images/logo-ink.png?v=202609251727); }
+html[data-theme="light"] .pl-logo{ --pl: url(../assets/images/logo-ink.png?v=202609251738); }
 .pl-empty{ position: absolute; inset: 0; background: rgba(255,255,255,.16); }
 html[data-theme="light"] .pl-empty{ background: rgba(0,0,0,.08); }
 .pl-fill{ position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: var(--pl) center bottom / 132px 132px no-repeat;
@@ -2794,3 +2794,43 @@ html[data-theme="light"] .pl-empty{ background: rgba(0,0,0,.08); }
 .preloader.loaded .pl-fill{ height: 100%; }
 @media (prefers-reduced-motion: reduce){ .pl-wave{ display: none; } }
 @media (max-width: 480px){ .brand-mark{ width: 36px; height: 36px; } }
+
+/* footer logo */
+.footer-logo{ display: block; width: 44px; height: 44px; object-fit: contain; margin-bottom: .6rem; }
+html[data-theme="light"] .footer-logo{ content: url(../assets/images/logo-ink.png); }
+
+/* Profile XP card v2: plain, same look as the other profile cards */
+.xp-card{ margin: 1.4rem 0; padding: 0 !important; background: var(--glass-bg) !important; }
+.xp-card .pc-sec{ padding: 1.3rem 1.5rem; border-top: 1px solid var(--line); }
+.xp-card .pc-sec:first-child{ border-top: 0; }
+.pc-label{ margin: 0 0 .8rem; font-size: .95rem; font-weight: 700; color: var(--ink); }
+.pc-label small{ margin-left: .4rem; font-weight: 500; font-size: .82rem; color: var(--ink-faint); }
+.xp-level-head{ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: .6rem; }
+.xp-level-head .pc-label{ margin-bottom: .2rem; color: var(--ink-faint); font-size: .8rem; font-weight: 600; }
+.xp-level-title{ margin: 0; font-size: 1.35rem; }
+.xp-card .xp-num{ margin: 0; font-size: .9rem; color: var(--ink-soft); }
+.xp-card .xp-bar{ height: 6px; margin: .8rem 0 .5rem; border-radius: 3px; background: var(--line); }
+.xp-card .xp-bar i{ background: var(--brand); border-radius: 3px; }
+.xp-next{ margin: 0; font-size: .82rem; color: var(--ink-faint); }
+.xp-card .xp-stats{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; margin: 1.2rem 0 0; }
+.xp-card .xp-stats div{ padding: .7rem .9rem; border-radius: 12px; border: 1px solid var(--line); }
+.xp-card .xp-stats dt{ font-size: .75rem; color: var(--ink-faint); }
+.xp-card .xp-stats dd{ margin: .15rem 0 0; font-size: 1.25rem; font-weight: 700; color: var(--ink); }
+.fav-chip, .fav-chip.on{ background: transparent; color: var(--ink-soft); border: 1px solid var(--line); font-weight: 600; }
+.fav-chip:hover{ border-color: var(--ink-faint); color: var(--ink); }
+.fav-chip.on{ background: var(--brand); border-color: var(--brand); color: #fff; }
+.xp-card .xp-badges{ list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 1.6rem; }
+.xp-card .xp-badge{ display: flex; align-items: flex-start; gap: .7rem; padding: .65rem 0; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: none; opacity: 1; filter: none; }
+.xp-card .xp-badge .gi{ margin-top: .15rem; color: var(--ink-faint); }
+.xp-card .xp-badge span{ display: flex; flex-direction: column; font-size: 0; width: auto; height: auto; background: none; border-radius: 0; place-items: initial; }
+.xp-card .xp-badge strong{ font-size: .88rem; color: var(--ink-faint); font-weight: 600; }
+.xp-card .xp-badge small{ font-size: .78rem; color: var(--ink-faint); opacity: .8; }
+.xp-card .xp-badge.on .gi{ color: var(--brand); }
+.xp-card .xp-badge.on strong{ color: var(--ink); }
+.xp-card .xp-badge.on{ border-color: var(--line); background: none; }
+.xp-how{ margin-top: 1rem; font-size: .85rem; color: var(--ink-soft); }
+.xp-how summary{ cursor: pointer; color: var(--ink-soft); font-weight: 600; }
+.xp-how ul{ margin: .6rem 0 0; padding-left: 1.1rem; display: grid; gap: .25rem; }
+.xp-how b{ color: var(--ink); }
+@media (max-width: 700px){ .xp-card .xp-stats{ grid-template-columns: repeat(2, minmax(0, 1fr)); } .xp-card .xp-badges{ grid-template-columns: 1fr; } }
+.xp-card .wl-empty{ font-size: .88rem; }
