@@ -50,14 +50,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     const ch = pick((data.characters || []).slice().sort(() => Math.random() - .5), fav, 1);
     const tr = pick(data.trailers || [], fav, 1);
     const mr = pick(data.merchandise || [], fav, 1);
+    // a picture on top of each feed card (the daily challenge one stays blurred with a "?")
+    const thumb = (inner, kind = "") => `<span class="feed-thumb ${kind}">${inner}${kind === "mystery" ? `<b aria-hidden="true">?</b>` : ""}</span>`;
+    const pool = (data.characters || []), mystery = pool.length ? pool[(new Date().getDate() * 7) % pool.length].id : "c1";
     const tag = cat => `<small style="color:${catOf(cat).color || "var(--brand)"}">${esc(catOf(cat).name || "")}</small>`;
     const cards = [
       ...ch.map(c => `<a class="feed-card feed-char" href="character.html?id=${c.id}"><img src="assets/images/characters/${c.id}.jpg" alt="">${tag(c.category)}<span class="feed-kind">Character for you</span><strong>${esc(c.name)}</strong></a>`),
-      ...art.map(a => `<a class="feed-card" href="articles.html?id=${a.id}">${tag(a.category)}<span class="feed-kind">New article</span><strong>${esc(a.title)}</strong></a>`),
-      ...ev.map(e => `<a class="feed-card" href="events.html">${tag(e.category)}<span class="feed-kind">Upcoming event · ${new Date(e.date).toLocaleDateString(undefined, { day: "numeric", month: "short" })}</span><strong>${esc(e.title)}</strong></a>`),
-      ...tr.map(t => `<a class="feed-card" href="trailers.html?play=${t.id}">${tag(t.category)}<span class="feed-kind">Watch</span><strong>${esc(t.title)}</strong></a>`),
-      ...mr.map(m => `<a class="feed-card" href="merchandise.html">${tag(m.category)}<span class="feed-kind">Merch · PKR ${Number(m.price).toLocaleString()}</span><strong>${esc(m.name)}</strong></a>`),
-      `<a class="feed-card" href="play.html#daily"><small style="color:#f4c430">Play</small><span class="feed-kind">Daily challenge</span><strong>Guess today's character from 3 clues</strong></a>`
+      ...art.map(a => `<a class="feed-card" href="articles.html?id=${a.id}">${thumb(FV.slotImg("articles", a.id, a.title))}${tag(a.category)}<span class="feed-kind">New article</span><strong>${esc(a.title)}</strong></a>`),
+      ...ev.map(e => `<a class="feed-card" href="events.html">${e.art ? thumb(FV.slotImg("articles", e.art, e.title)) : ""}${tag(e.category)}<span class="feed-kind">Upcoming event · ${new Date(e.date).toLocaleDateString(undefined, { day: "numeric", month: "short" })}</span><strong>${esc(e.title)}</strong></a>`),
+      ...tr.map(t => `<a class="feed-card" href="trailers.html?play=${t.id}">${thumb(t.youtube ? `<img src="https://i.ytimg.com/vi/${encodeURIComponent(t.youtube)}/hqdefault.jpg" alt="" loading="lazy">` : FV.slotImg("trailers", t.id, t.title), "play")}${tag(t.category)}<span class="feed-kind">Watch</span><strong>${esc(t.title)}</strong></a>`),
+      ...mr.map(m => `<a class="feed-card" href="merchandise.html">${thumb(FV.slotImg("merch", m.id, m.name), "merch")}${tag(m.category)}<span class="feed-kind">Merch · PKR ${Number(m.price).toLocaleString()}</span><strong>${esc(m.name)}</strong></a>`),
+      `<a class="feed-card" href="play.html#daily">${thumb(`<img src="assets/images/characters/${mystery}.jpg" alt="" loading="lazy">`, "mystery")}<small style="color:#f4c430">Play</small><span class="feed-kind">Daily challenge</span><strong>Guess today's character from 3 clues</strong></a>`
     ].join("");
     home.hidden = false;
     home.innerHTML = `<div class="section-inner">
